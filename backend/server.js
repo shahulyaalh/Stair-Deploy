@@ -8,7 +8,7 @@ const path = require("path");
 const nodemailer = require("nodemailer");
 
 const Admin = require("./models/admin");
-const Activity = require("./models/activity");
+const Activity = require("./models/Activity");
 
 const app = express();
 app.use(cors());
