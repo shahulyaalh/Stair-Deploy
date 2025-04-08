@@ -20,7 +20,7 @@ const Contact = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/send-email",
+        "https://stair-deploy-6.onrender.com/api/send-email",
         formData
       );
       if (res.data.success) {

@@ -28,7 +28,10 @@ const AdminDashboard = () => {
     formData.append("image", image);
 
     try {
-      await axios.post("http://localhost:5000/api/activities/upload", formData);
+      await axios.post(
+        "https://stair-deploy-6.onrender.com/api/activities/upload",
+        formData
+      );
       setMessage("Activity uploaded successfully!");
       setTitle("");
       setDescription("");

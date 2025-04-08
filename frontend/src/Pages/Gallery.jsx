@@ -6,7 +6,9 @@ const Gallery = () => {
 
   useEffect(() => {
     const fetchActivities = async () => {
-      const res = await axios.get("http://localhost:5000/api/activities");
+      const res = await axios.get(
+        "https://stair-deploy-6.onrender.com/api/activities"
+      );
       setActivities(res.data);
     };
     fetchActivities();
@@ -21,7 +23,7 @@ const Gallery = () => {
         {activities.map((activity) => (
           <div key={activity._id} className="border p-4 rounded shadow">
             <img
-              src={`http://localhost:5000${activity.imageUrl}`}
+              src={`hhttps://stair-deploy-6.onrender.com${activity.imageUrl}`}
               alt={activity.title}
               className="w-full h-48 object-cover mb-2 rounded"
             />
