@@ -19,7 +19,7 @@ import "./index.css";
 import "./App.css";
 import ProductDetail from "./Pages/ProductDetail";
 import Contact from "./Pages/Contact";
-import Products from "./pages/Products";
+import Products from "./Pages/Products";
 import Gallery from "./Pages/Gallery";
 import AdminLogin from "./Pages/AdminLogin";
 import AdminDashboard from "./Pages/AdminDashboard";
