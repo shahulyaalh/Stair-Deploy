@@ -9,8 +9,8 @@ import {
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import Home from "./pages/Home";
-import About from "./pages/About";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
 
 import Loader from "./components/Loader/Loader"; // 🔁 Loader for each route change
 import LogoLoader from "./components/ui/Intro/LogoLoader"; // 🚀 Initial loader
