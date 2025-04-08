@@ -11,11 +11,6 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Products from "./pages/Products";
-import Gallery from "./pages/Gallery";
-import AdminLogin from "./pages/AdminLogin";
-import AdminDashboard from "./pages/AdminDashboard";
 
 import Loader from "./components/Loader/Loader"; // 🔁 Loader for each route change
 import LogoLoader from "./components/ui/Intro/LogoLoader"; // 🚀 Initial loader
@@ -23,6 +18,11 @@ import LogoLoader from "./components/ui/Intro/LogoLoader"; // 🚀 Initial loade
 import "./index.css";
 import "./App.css";
 import ProductDetail from "./Pages/ProductDetail";
+import Contact from "./Pages/Contact";
+import Products from "./pages/Products";
+import Gallery from "./Pages/Gallery";
+import AdminLogin from "./Pages/AdminLogin";
+import AdminDashboard from "./Pages/AdminDashboard";
 
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem("adminToken");
