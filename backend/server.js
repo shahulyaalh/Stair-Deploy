@@ -6,6 +6,7 @@ const bcrypt = require("bcryptjs");
 const multer = require("multer");
 const path = require("path");
 const nodemailer = require("nodemailer");
+require("dotenv").config();
 
 const Admin = require("./models/admin");
 const Activity = require("./models/Activity");
@@ -14,16 +15,21 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const JWT_SECRET = "your_super_secret_key";
+// Environment variables
+const JWT_SECRET = process.env.JWT_SECRET;
+const MONGO_URI = process.env.MONGO_URI;
 
 // MongoDB Connection
 mongoose
-  .connect("mongodb://127.0.0.1:27017/stair-ecosystem")
+  .connect(MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
-    console.log("Connected to MongoDB");
+    console.log("✅ Connected to MongoDB");
     initAdmin();
   })
-  .catch((err) => console.error("MongoDB connection error:", err));
+  .catch((err) => console.error("❌ MongoDB connection error:", err));
 
 // Initialize default admin if none exists
 const initAdmin = async () => {
@@ -35,10 +41,10 @@ const initAdmin = async () => {
         email: "admin@stair.com",
         password: hashedPassword,
       });
-      console.log("Default admin user created.");
+      console.log("✅ Default admin user created.");
     }
   } catch (err) {
-    console.error("Error initializing admin user:", err);
+    console.error("❌ Error initializing admin user:", err);
   }
 };
 
@@ -77,6 +83,7 @@ const verifyToken = (req, res, next) => {
   });
 };
 
+// Dashboard route
 app.get("/api/admin/dashboard", verifyToken, (req, res) => {
   res.json({ message: "Welcome to the admin dashboard!" });
 });
@@ -126,14 +133,14 @@ app.post("/api/send-email", async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "shahulyaalh@gmail.com", // Replace with your email
-      pass: "owwe ilvv oxag joew", // Replace with App Password
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
   const mailOptions = {
     from: email,
-    to: "shahulyaalh@gmail.com", // Your email to receive messages
+    to: process.env.EMAIL_USER,
     subject: `New Message from ${name}`,
     text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
   };
@@ -149,6 +156,8 @@ app.post("/api/send-email", async (req, res) => {
   }
 });
 
-app.listen(5000, () =>
-  console.log("🚀 Server running on http://localhost:5000")
+// Start server on dynamic port for Render
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () =>
+  console.log(`🚀 Server running on http://localhost:${PORT}`)
 );
