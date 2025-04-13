@@ -6,31 +6,31 @@ const Products = () => {
   const products = [
     {
       id: 1,
-      title: "Go Local",
+      title: "Solar Products",
       shortDesc: "Reach out to Solar Dealer Near Your Home",
       fullDesc:
         "Connect with certified solar vendors in your locality, compare quotes, and schedule installations effortlessly with our Go Local initiative.",
-      img: "/images/local.png",
+      img: "/images/panel.png",
       bgColor: "bg-cyan-400",
     },
     {
       id: 2,
-      title: "Solar Panels",
+      title: "CCTV Camera Products",
       shortDesc: "Make your home solar powered",
       fullDesc:
         "Explore high-efficiency solar panels tailored to your home needs, backed by warranty and government subsidies to lower your energy bills.",
       img: "/images/panel.png",
       bgColor: "bg-gray-800 text-white",
     },
-    {
-      id: 3,
-      title: "Lithium Battery",
-      shortDesc: "The future generation battery for New India",
-      fullDesc:
-        "Store solar energy for night usage or power outages with our advanced Lithium batteries designed for longer life, better safety, and rapid charging.",
-      img: "/images/battery.png",
-      bgColor: "bg-yellow-700 text-white",
-    },
+    // {
+    //   id: 3,
+    //   title: "Lithium Battery",
+    //   shortDesc: "The future generation battery for New India",
+    //   fullDesc:
+    //     "Store solar energy for night usage or power outages with our advanced Lithium batteries designed for longer life, better safety, and rapid charging.",
+    //   img: "/images/battery.png",
+    //   bgColor: "bg-yellow-700 text-white",
+    // },
   ];
 
   return (
@@ -38,7 +38,7 @@ const Products = () => {
       {products.map((item) => (
         <div
           key={item.id}
-          className={`relative rounded-3xl p-10 min-h-[350px] md:min-h-[400px] w-full md:max-w-2xl flex flex-col md:flex-row justify-between items-start hover:shadow-2xl transition-all duration-300 transform hover:scale-105 ${item.bgColor}`}
+          className={`relative rounded-3xl p-10 min-h-[350px] md:min-h-[400px] w-full md:max-w-2xl flex flex-col md:flex-row justify-between items-start hover:shadow-2xl transition-all duration-300 ${item.bgColor}`}
         >
           {/* Text content */}
           <div className="max-w-md">
@@ -57,7 +57,7 @@ const Products = () => {
             <img
               src={item.img}
               alt={item.title}
-              className="w-52 h-auto object-contain transition-transform duration-300 ease-in-out hover:scale-110"
+              className="w-52 h-auto object-contain transition-transform duration-300 ease-in-out transform hover:scale-110"
             />
           </div>
         </div>

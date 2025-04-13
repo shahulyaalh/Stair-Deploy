@@ -7,6 +7,7 @@ import {
   Typography,
   Paper,
   Box,
+  CircularProgress,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
@@ -15,6 +16,7 @@ const AdminLogin = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false); // 🔁 loader state
 
   const navigate = useNavigate();
 
@@ -22,6 +24,7 @@ const AdminLogin = () => {
     e.preventDefault();
     setError("");
     setSuccess(false);
+    setLoading(true); // 🌀 start loading
 
     try {
       const res = await axios.post(
@@ -35,18 +38,20 @@ const AdminLogin = () => {
       localStorage.setItem("adminToken", res.data.token);
       setSuccess(true);
       alert("Login successful! Redirecting...");
-      navigate("/admin-dashboard"); // redirect here
+      navigate("/admin-dashboard");
     } catch (err) {
       setError(
         err.response?.data?.error || "Something went wrong. Try again later."
       );
+    } finally {
+      setLoading(false); // 🛑 stop loading
     }
   };
 
   return (
     <Container maxWidth="sm">
       <Paper elevation={3} sx={{ p: 4, mt: 8 }}>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom align="center">
           Admin Login
         </Typography>
         <form onSubmit={handleLogin}>
@@ -73,8 +78,23 @@ const AdminLogin = () => {
                 Logged in successfully!
               </Typography>
             )}
-            <Button type="submit" variant="contained" color="primary">
-              Login
+
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              disabled={loading} // ⛔ disable while loading
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              {loading ? (
+                <CircularProgress size={24} color="inherit" />
+              ) : (
+                "Login"
+              )}
             </Button>
           </Box>
         </form>
