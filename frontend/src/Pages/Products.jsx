@@ -1,7 +1,14 @@
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Products = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
 
   const products = [
     {
@@ -20,25 +27,20 @@ const Products = () => {
       fullDesc:
         "Explore high-efficiency solar panels tailored to your home needs, backed by warranty and government subsidies to lower your energy bills.",
       img: "/images/camera.png",
-      bgColor: "bg-gray-800 text-white",
+      bgColor: "", // We'll apply inline style for #FDB813
     },
-    // {
-    //   id: 3,
-    //   title: "Lithium Battery",
-    //   shortDesc: "The future generation battery for New India",
-    //   fullDesc:
-    //     "Store solar energy for night usage or power outages with our advanced Lithium batteries designed for longer life, better safety, and rapid charging.",
-    //   img: "/images/battery.png",
-    //   bgColor: "bg-yellow-700 text-white",
-    // },
   ];
 
   return (
     <div className="grid md:grid-cols-2 gap-12 p-10 lg:p-16">
-      {products.map((item) => (
+      {products.map((item, index) => (
         <div
+          data-aos="fade-up"
           key={item.id}
           className={`relative rounded-3xl p-10 min-h-[350px] md:min-h-[400px] w-full md:max-w-2xl flex flex-col md:flex-row justify-between items-start hover:shadow-2xl transition-all duration-300 ${item.bgColor}`}
+          style={
+            index === 1 ? { backgroundColor: "#FDB813", color: "black" } : {}
+          }
         >
           {/* Text content */}
           <div className="max-w-md">
