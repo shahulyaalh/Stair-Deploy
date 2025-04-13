@@ -19,7 +19,7 @@ const Products = () => {
       shortDesc: "Make your home solar powered",
       fullDesc:
         "Explore high-efficiency solar panels tailored to your home needs, backed by warranty and government subsidies to lower your energy bills.",
-      img: "/images/panel.png",
+      img: "/images/camera.png",
       bgColor: "bg-gray-800 text-white",
     },
     // {
@@ -48,7 +48,7 @@ const Products = () => {
               onClick={() => navigate(`/product/${item.id}`)}
               className="bg-white text-black font-semibold px-6 py-3 rounded-xl shadow hover:bg-gray-100"
             >
-              Learn more
+              Explore Products
             </button>
           </div>
 

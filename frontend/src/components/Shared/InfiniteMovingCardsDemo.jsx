@@ -5,13 +5,28 @@ import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
 
 export function InfiniteMovingCardsDemo() {
   return (
-    <div className="h-[40rem] flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-      <InfiniteMovingCards
-        items={testimonials}
-        direction="right"
-        speed="slow"
-      />
-    </div>
+    <section className="h-[36rem] w-full flex flex-col items-center justify-start bg-white dark:bg-black overflow-hidden px-4 pt-8">
+      {/* Heading block moved up */}
+      <div className="text-center mb-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-blue-700">
+          What Our Customers Say
+        </h2>
+        <p className="mt-2 text-gray-600 dark:text-gray-300 max-w-xl mx-auto text-base md:text-lg">
+          Real stories from real customers who trusted us with their solar and
+          security needs.
+        </p>
+      </div>
+
+      {/* Wider, taller InfiniteMovingCards container */}
+      <div className="w-full max-w-7xl h-[24rem]">
+        <InfiniteMovingCards
+          items={testimonials}
+          direction="right"
+          speed="slow"
+          className="!rounded-none !shadow-md border border-gray-200 dark:border-gray-700"
+        />
+      </div>
+    </section>
   );
 }
 
