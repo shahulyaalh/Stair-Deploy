@@ -50,11 +50,12 @@ const Contact = () => {
             </p>
             <ul className="space-y-4 text-sm text-gray-300">
               <li className="flex items-center gap-2">
-                📍 Fake address, 9999 City
+                📍 1st Floor, Sundaram Complex, 1st Street, Postal Colony,
+                N.K.Road, Thanjavur-6
               </li>
-              <li className="flex items-center gap-2">📞 123456789</li>
+              <li className="flex items-center gap-2">📞 73057 81227</li>
               <li className="flex items-center gap-2">
-                📧 contact@business.com
+                📧 stairecosystem@gmail.com
               </li>
             </ul>
           </div>
