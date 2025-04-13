@@ -14,7 +14,7 @@ const Products = () => {
     {
       id: 1,
       title: "Solar Products",
-      shortDesc: "Reach out to Solar Dealer Near Your Home",
+      shortDesc: "Make your home solar powered",
       fullDesc:
         "Connect with certified solar vendors in your locality, compare quotes, and schedule installations effortlessly with our Go Local initiative.",
       img: "/images/panel.png",
@@ -22,8 +22,8 @@ const Products = () => {
     },
     {
       id: 2,
-      title: "CCTV Camera Products",
-      shortDesc: "Make your home solar powered",
+      title: "Make your Home Secured",
+      shortDesc: "Make your Home Secured",
       fullDesc:
         "Explore high-efficiency solar panels tailored to your home needs, backed by warranty and government subsidies to lower your energy bills.",
       img: "/images/camera.png",
