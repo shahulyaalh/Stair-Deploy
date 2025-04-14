@@ -22,7 +22,7 @@ const Products = () => {
     },
     {
       id: 2,
-      title: "Make your Home Secured",
+      title: "CCTV Camera Products",
       shortDesc: "Make your Home Secured",
       fullDesc:
         "Explore high-efficiency solar panels tailored to your home needs, backed by warranty and government subsidies to lower your energy bills.",
