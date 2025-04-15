@@ -31,8 +31,10 @@ router.post("/upload", upload.single("image"), async (req, res) => {
 });
 
 router.get("/", async (req, res) => {
+  console.log("hi there");
   try {
     const activities = await Activity.find().sort({ createdAt: -1 });
+    console.log(activities);
     res.json(activities);
   } catch (err) {
     res.status(500).json({ error: "Failed to fetch activities." });

@@ -7,13 +7,16 @@ const multer = require("multer");
 const path = require("path");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
+const sharp = require("sharp");
 
 const Admin = require("./models/admin");
 const Activity = require("./models/Activity");
 
 const app = express();
 app.use(cors());
-app.use(express.json());
+// app.use(express.json());
+app.use(express.json({ limit: "50mb" })); // or larger if needed
+app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
 // Environment variables
 const JWT_SECRET = process.env.JWT_SECRET;
@@ -102,25 +105,79 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// Upload Activity
-app.post("/api/activities/upload", upload.single("image"), async (req, res) => {
-  const { title, description } = req.body;
-  const imageUrl = req.file ? `/uploads/${req.file.filename}` : "";
+// // Upload Activity
+// app.post("/api/activities/upload", upload.single("image"), async (req, res) => {
+//   const { title, description } = req.body;
+//   console.log(req.file);
+//   const imageUrl = req.file ? `/uploads/${req.file.filename}` : "";
+
+//   try {
+//     const activity = new Activity({ title, description, imageUrl });
+//     await activity.save();
+//     res.status(201).json(activity);
+//   } catch (err) {
+//     res.status(500).json({ error: "Failed to save activity." });
+//   }
+// });
+
+// // Get Activities
+// app.get("/api/activities", async (req, res) => {
+//   try {
+//     const activities = await Activity.find().sort({ createdAt: -1 });
+//     console.log(activities);
+//     res.json(activities);
+//   } catch (err) {
+//     res.status(500).json({ error: "Failed to fetch activities." });
+//   }
+// });
+app.post("/api/activities/upload", async (req, res) => {
+  const { title, description, image } = req.body;
+
+  if (!image) {
+    return res.status(400).json({ error: "Image is required." });
+  }
 
   try {
-    const activity = new Activity({ title, description, imageUrl });
+    // Decode base64 image
+    const buffer = Buffer.from(image, "base64");
+
+    // Convert image to raw RGBA
+    const { data, info } = await sharp(buffer)
+      .ensureAlpha()
+      .raw()
+      .toBuffer({ resolveWithObject: true });
+
+    // Convert raw buffer to 2D array of 32-bit integers (RGBA format)
+    const pixelArray = [];
+    for (let i = 0; i < data.length; i += 4) {
+      const r = data[i];
+      const g = data[i + 1];
+      const b = data[i + 2];
+      const a = data[i + 3];
+      const rgba = (r << 24) | (g << 16) | (b << 8) | a;
+      pixelArray.push(rgba);
+    }
+
+    // Reshape to 2D array
+    const width = info.width;
+    const height = info.height;
+    const reshaped = Array.from({ length: height }, (_, i) =>
+      pixelArray.slice(i * width, (i + 1) * width)
+    );
+
+    const activity = new Activity({ title, description, imageData: reshaped });
     await activity.save();
     res.status(201).json(activity);
   } catch (err) {
-    res.status(500).json({ error: "Failed to save activity." });
+    console.error(err);
+    res.status(500).json({ error: "Failed to process and save image." });
   }
 });
 
-// Get Activities
 app.get("/api/activities", async (req, res) => {
   try {
     const activities = await Activity.find().sort({ createdAt: -1 });
-    res.json(activities);
+    res.json(activities); // includes imageData array
   } catch (err) {
     res.status(500).json({ error: "Failed to fetch activities." });
   }
