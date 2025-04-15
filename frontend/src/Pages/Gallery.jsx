@@ -1,32 +1,45 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
-// import { LOCAL } from "../../../conf";
 
 const Gallery = () => {
   const [activities, setActivities] = useState([]);
+  const [loading, setLoading] = useState(true); // ⏳ loader state
 
   useEffect(() => {
     const fetchActivities = async () => {
-      const res = await axios.get(
-        `https://stair-deploy-6.onrender.com/api/activities`
-      );
-      setActivities(res.data);
+      try {
+        const res = await axios.get(
+          `https://stair-deploy-6.onrender.com/api/activities`
+        );
+        setActivities(res.data);
+      } catch (error) {
+        console.error("Failed to fetch activities:", error);
+      } finally {
+        setLoading(false); // ✅ done loading
+      }
     };
     fetchActivities();
   }, []);
 
   return (
-    <div className="p-4 mt-24">
+    <div className="p-4 mt-24 min-h-screen">
       <h2 className="text-2xl font-bold mb-6">Company Activities</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {activities.map((activity) => (
-          <div key={activity._id} className="border p-4 rounded shadow">
-            <CanvasImage imageData={activity.imageData} />
-            <h3 className="font-bold mt-2">{activity.title}</h3>
-            <p>{activity.description}</p>
-          </div>
-        ))}
-      </div>
+
+      {loading ? (
+        <div className="flex justify-center items-center h-60">
+          <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {activities.map((activity) => (
+            <div key={activity._id} className="border p-4 rounded shadow">
+              <CanvasImage imageData={activity.imageData} />
+              <h3 className="font-bold mt-2">{activity.title}</h3>
+              <p>{activity.description}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

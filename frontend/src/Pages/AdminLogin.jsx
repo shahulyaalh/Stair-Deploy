@@ -49,7 +49,9 @@ const AdminLogin = () => {
   };
 
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="sm" sx={{ mb: 6 }}>
+      {" "}
+      {/* ⬅️ Added bottom margin */}
       <Paper elevation={3} sx={{ p: 4, mt: 8 }}>
         <Typography variant="h4" gutterBottom align="center">
           Admin Login
@@ -83,7 +85,7 @@ const AdminLogin = () => {
               type="submit"
               variant="contained"
               color="primary"
-              disabled={loading} // ⛔ disable while loading
+              disabled={loading}
               sx={{
                 display: "flex",
                 alignItems: "center",
