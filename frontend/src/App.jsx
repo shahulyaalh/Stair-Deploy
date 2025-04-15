@@ -20,6 +20,8 @@ import Products from "./Pages/Products";
 import Gallery from "./Pages/Gallery";
 import AdminLogin from "./Pages/AdminLogin";
 import AdminDashboard from "./Pages/AdminDashboard";
+import CctvProductsPage from "./Pages/CctvProductsPage";
+import SolarProductsPage from "./Pages/SolarProductsPage";
 
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem("adminToken");
@@ -52,6 +54,8 @@ const AppContent = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/product/solar" element={<SolarProductsPage />} />
+          <Route path="/product/cctv" element={<CctvProductsPage />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/admin-login" element={<AdminLogin />} />
