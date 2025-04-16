@@ -5,13 +5,13 @@ import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
 
 export function InfiniteMovingCardsDemo() {
   return (
-    <section className="h-[36rem] w-full flex flex-col items-center justify-start bg-white dark:bg-black overflow-hidden px-4 pt-8">
+    <section className="h-[36rem] w-full flex flex-col items-center justify-start bg-gray-100 dark:bg-grey overflow-hidden px-4 pt-8">
       {/* Heading block moved up */}
       <div className="text-center mb-6">
         <h2 className="text-3xl md:text-4xl font-bold text-blue-700">
           What Our Customers Say
         </h2>
-        <p className="mt-2 text-gray-600 dark:text-gray-300 max-w-xl mx-auto text-base md:text-lg">
+        <p className="mt-2 text-black-600 dark:text-black-300 max-w-xl mx-auto text-base md:text-lg">
           Real stories from real customers who trusted us with their solar and
           security needs.
         </p>
