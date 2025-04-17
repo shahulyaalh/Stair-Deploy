@@ -127,7 +127,7 @@ const CctvProductsPage = () => {
         </div>
       ) : (
         <div className="text-center text-gray-600 text-lg mt-12">
-          No products available with the current filters.
+          No products available.
         </div>
       )}
     </div>
