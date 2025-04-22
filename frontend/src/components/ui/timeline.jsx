@@ -33,8 +33,11 @@ export const Timeline = ({ data }) => {
             About Our Bold Beginning
           </h2>
           <p className="text-gray-700 text-sm md:text-base max-w-sm">
-            I've been working on Aceternity for the past 2 years. Here's a
-            timeline of my journey.
+            Stair Ecosystem Private Limited is committed to driving innovation
+            in sustainable energy and smart surveillance. This timeline
+            highlights our core solutions and the value we bring to homes,
+            businesses, and industries through advanced solar and security
+            technologies.
           </p>
         </div>
 

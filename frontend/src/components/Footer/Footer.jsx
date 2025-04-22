@@ -2,10 +2,10 @@ import React from "react";
 import {
   FaFacebookF,
   FaInstagram,
-  FaXTwitter,
-  FaGithub,
+  FaWhatsapp,
   FaYoutube,
-} from "react-icons/fa6";
+  FaPhoneAlt,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -19,10 +19,10 @@ const Footer = () => {
             hierarchies.
           </p>
           <div className="flex space-x-5 text-gray-600">
-            <FaFacebookF className="hover:text-blue-600 cursor-pointer" />
+            <FaPhoneAlt className="hover:text-green-600 cursor-pointer" />
+            <FaWhatsapp className="hover:text-green-500 cursor-pointer" />
             <FaInstagram className="hover:text-pink-500 cursor-pointer" />
-            <FaXTwitter className="hover:text-black cursor-pointer" />
-            <FaGithub className="hover:text-gray-900 cursor-pointer" />
+            <FaFacebookF className="hover:text-blue-600 cursor-pointer" />
             <FaYoutube className="hover:text-red-600 cursor-pointer" />
           </div>
         </div>

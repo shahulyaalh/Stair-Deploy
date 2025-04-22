@@ -38,9 +38,12 @@ const AppContent = () => {
     return () => clearTimeout(timeout);
   }, [location]);
 
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <div className="pt-10">
-      {loading && <Loader />}
       <Header />
       <motion.div
         key={location.pathname}

@@ -4,120 +4,61 @@ import { Timeline } from "@/components/ui/timeline";
 export function TimelineDemo() {
   const data = [
     {
-      title: "2024",
+      title: "About Stair Ecosystem Private Limited",
       content: (
         <div>
           <p className="text-black text-xs md:text-sm font-normal mb-8">
-            Built and launched Aceternity UI and Aceternity UI Pro from scratch
+            At Stair Ecosystem Private Limited, we are dedicated to creating a
+            sustainable and secure future through innovative solar energy and
+            surveillance solutions. As a growing provider in the solar and
+            security sector, our goal is to bring reliable, efficient, and
+            affordable technology to homes, businesses, and industries.
           </p>
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src="https://assets.aceternity.com/templates/startup-1.webp"
-              alt="startup template"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
-            />
-            <img
-              src="https://assets.aceternity.com/templates/startup-2.webp"
-              alt="startup template"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
-            />
-            <img
-              src="https://assets.aceternity.com/templates/startup-3.webp"
-              alt="startup template"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
-            />
-            <img
-              src="https://assets.aceternity.com/templates/startup-4.webp"
-              alt="startup template"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
-            />
-          </div>
+          <p className="text-black text-xs md:text-sm font-normal mb-8">
+            Our team is committed to delivering quality service, from
+            consultation to installation and after-sales support. Whether you're
+            looking to switch to clean energy or strengthen your property’s
+            security, we’re here to provide smart, tailored solutions that meet
+            your needs.
+          </p>
         </div>
       ),
     },
     {
-      title: "Early 2023",
+      title: "Solar Energy Solutions",
       content: (
         <div>
           <p className="text-black text-xs md:text-sm font-normal mb-8">
-            I usually run out of copy, but when I see content this big, I try to
-            integrate lorem ipsum.
+            Harness the power of the sun with our high-performance solar
+            systems. We offer end-to-end services including site assessment,
+            system design, installation, and maintenance. Our solutions are
+            perfect for reducing electricity bills, lowering carbon footprints,
+            and achieving energy independence.
           </p>
           <p className="text-black text-xs md:text-sm font-normal mb-8">
-            Lorem ipsum is for people who are too lazy to write copy. But we are
-            not. Here are some more example of beautiful designs I built.
+            Built with top-tier components and the latest technology, our
+            systems are designed for long-term durability and maximum energy
+            efficiency — ensuring you get the most out of every ray of sunlight.
           </p>
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src="https://assets.aceternity.com/pro/hero-sections.png"
-              alt="hero template"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
-            />
-            <img
-              src="https://assets.aceternity.com/features-section.png"
-              alt="feature template"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
-            />
-            <img
-              src="https://assets.aceternity.com/pro/bento-grids.png"
-              alt="bento template"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
-            />
-            <img
-              src="https://assets.aceternity.com/cards.png"
-              alt="cards template"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
-            />
-          </div>
         </div>
       ),
     },
     {
-      title: "Changelog",
+      title: "CCTV Surveillance Systems",
       content: (
         <div>
-          <p className="text-black text-xs md:text-sm font-normal mb-4">
-            Deployed 5 new components on Aceternity today
+          <p className="text-black text-xs md:text-sm font-normal mb-8">
+            Stay safe and in control with our advanced CCTV surveillance
+            systems. We provide smart security camera solutions with
+            high-definition clarity, night vision, motion detection, and mobile
+            access — allowing you to monitor your property in real time from
+            anywhere.
           </p>
-          <div className="mb-8">
-            <div className="flex gap-2 items-center text-black text-xs md:text-sm">
-              ✅ Card grid component
-            </div>
-            <div className="flex gap-2 items-center text-black text-xs md:text-sm">
-              ✅ Startup template Aceternity
-            </div>
-            <div className="flex gap-2 items-center text-black text-xs md:text-sm">
-              ✅ Random file upload lol
-            </div>
-            <div className="flex gap-2 items-center text-black text-xs md:text-sm">
-              ✅ Himesh Reshammiya Music CD
-            </div>
-            <div className="flex gap-2 items-center text-black text-xs md:text-sm">
-              ✅ Salman Bhai Fan Club registrations open
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src="https://assets.aceternity.com/pro/hero-sections.png"
-              alt="hero template"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
-            />
-            <img
-              src="https://assets.aceternity.com/features-section.png"
-              alt="feature template"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
-            />
-            <img
-              src="https://assets.aceternity.com/pro/bento-grids.png"
-              alt="bento template"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
-            />
-            <img
-              src="https://assets.aceternity.com/cards.png"
-              alt="cards template"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
-            />
-          </div>
+          <p className="text-black text-xs md:text-sm font-normal mb-8">
+            Whether for residential, commercial, or industrial use, our systems
+            are designed for easy use, reliable performance, and complete peace
+            of mind.
+          </p>
         </div>
       ),
     },
