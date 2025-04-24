@@ -42,8 +42,8 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-gray-800 mb-2">Support</h4>
             <ul className="space-y-1">
-              <li>Submit ticket</li>
-              <li>Documentation</li>
+              <li>Solar Products</li>
+              <li>CCTV Supports</li>
               <li>Guides</li>
             </ul>
           </div>
@@ -51,9 +51,9 @@ const Footer = () => {
             <h4 className="font-semibold text-gray-800 mb-2">Company</h4>
             <ul className="space-y-1">
               <li>About</li>
-              <li>Blog</li>
-              <li>Jobs</li>
-              <li>Press</li>
+              <li>Products</li>
+              <li>Home</li>
+              <li>Contact</li>
             </ul>
           </div>
           <div>
