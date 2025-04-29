@@ -23,7 +23,7 @@ const SolarCategories = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Our Solar Categories
+        Our Solar Products
       </motion.h2>
 
       <div className="grid md:grid-cols-3 gap-8">

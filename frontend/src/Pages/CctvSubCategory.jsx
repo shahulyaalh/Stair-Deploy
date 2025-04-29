@@ -39,12 +39,12 @@ const cctvSubCategoryData = {
 };
 
 const cctvDisplayNames = {
-  dome: "Dome Camera",
-  bullet: "Bullet Camera",
-  ip: "IP Camera",
-  ptz: "PTZ Camera",
-  wireless: "Wireless Camera",
-  solar: "Solar Power Camera",
+  dome: "Dome Cameras",
+  bullet: "Bullet Cameras",
+  ip: "IP Cameras",
+  ptz: "PTZ Cameras",
+  wireless: "Wireless Cameras",
+  solar: "Solar Power Cameras",
 };
 
 const CctvSubCategory = () => {
@@ -61,7 +61,7 @@ const CctvSubCategory = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        Our {cctvDisplayName} Types
+        Our {cctvDisplayName}
       </motion.h2>
 
       <div
