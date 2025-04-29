@@ -18,7 +18,6 @@ const Header = () => {
             alt="Stair Ecosystem"
             className="w-12 h-12 object-contain"
           />
-          {/* Hide text in mobile inside logo block */}
           <span className="hidden md:inline text-2xl font-bold text-blue-700 -mt-1">
             Stair Ecosystem Private Limited
           </span>
@@ -87,9 +86,9 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - solid white */}
       {isOpen && (
-        <div className="md:hidden bg-white/70 backdrop-blur-md backdrop-saturate-150 shadow-lg absolute w-full transition-all duration-300 ease-in-out">
+        <div className="md:hidden bg-white shadow-lg absolute w-full transition-all duration-300 ease-in-out">
           <nav className="flex flex-col items-center space-y-4 py-5">
             <Link
               to="/"
