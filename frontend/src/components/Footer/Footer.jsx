@@ -3,7 +3,7 @@ import {
   FaFacebookF,
   FaInstagram,
   FaWhatsapp,
-  FaYoutube,
+  FaEnvelope,
   FaPhoneAlt,
 } from "react-icons/fa";
 
@@ -19,11 +19,50 @@ const Footer = () => {
             hierarchies.
           </p>
           <div className="flex space-x-5 text-gray-600">
-            <FaPhoneAlt className="hover:text-green-600 cursor-pointer" />
-            <FaWhatsapp className="hover:text-green-500 cursor-pointer" />
-            <FaInstagram className="hover:text-pink-500 cursor-pointer" />
-            <FaFacebookF className="hover:text-blue-600 cursor-pointer" />
-            <FaYoutube className="hover:text-red-600 cursor-pointer" />
+            {/* Phone Call */}
+            <a
+              href="tel:+917305781227"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaPhoneAlt className="hover:text-green-600 cursor-pointer" />
+            </a>
+
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/917305781227"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaWhatsapp className="hover:text-green-500 cursor-pointer" />
+            </a>
+
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram className="hover:text-pink-500 cursor-pointer" />
+            </a>
+
+            {/* Facebook */}
+            <a
+              href="https://www.facebook.com/yourprofile"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookF className="hover:text-blue-600 cursor-pointer" />
+            </a>
+
+            {/* Email */}
+            <a
+              href="mailto:stairecosytem@example.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaEnvelope className="hover:text-red-500 cursor-pointer" />
+            </a>
           </div>
         </div>
 

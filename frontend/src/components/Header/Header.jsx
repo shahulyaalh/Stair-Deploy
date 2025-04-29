@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { LampDemo } from "../ui/lamp";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,22 +9,30 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white shadow-md fixed w-full top-0 left-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo & Company Name */}
-        <div className="flex items-center space-x-3">
+    <header className="bg-white/50 backdrop-blur-md backdrop-saturate-150 shadow-md fixed w-full top-0 left-0 z-50">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative">
+        {/* Logo */}
+        <div className="flex items-center space-x-4">
           <img
             src="/Logo.png"
             alt="Stair Ecosystem"
             className="w-12 h-12 object-contain"
           />
-          <span className="text-2xl font-bold text-blue-700">
+          {/* Hide text in mobile inside logo block */}
+          <span className="hidden md:inline text-2xl font-bold text-blue-700 -mt-1">
             Stair Ecosystem Private Limited
           </span>
         </div>
 
+        {/* Centered Text in Mobile */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 md:hidden">
+          <span className="text-xl font-bold text-blue-700 -mt-1">
+            Stair Ecosystem
+          </span>
+        </div>
+
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex space-x-8 mr-10">
           <Link
             to="/"
             className="text-gray-700 hover:text-blue-700 font-medium"
@@ -58,14 +65,6 @@ const Header = () => {
           </Link>
         </nav>
 
-        {/* Login Button (Desktop) */}
-        <Link
-          to="/admin-login"
-          className="hidden md:block bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition"
-        >
-          Login
-        </Link>
-
         {/* Mobile Menu Button */}
         <button
           className="md:hidden text-gray-700 focus:outline-none"
@@ -90,7 +89,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white shadow-lg absolute w-full">
+        <div className="md:hidden bg-white/70 backdrop-blur-md backdrop-saturate-150 shadow-lg absolute w-full transition-all duration-300 ease-in-out">
           <nav className="flex flex-col items-center space-y-4 py-5">
             <Link
               to="/"
@@ -126,13 +125,6 @@ const Header = () => {
               className="text-gray-700 hover:text-blue-700 font-medium"
             >
               Contact
-            </Link>
-            <Link
-              to="/admin-login"
-              onClick={handleLinkClick}
-              className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition"
-            >
-              Login
             </Link>
           </nav>
         </div>

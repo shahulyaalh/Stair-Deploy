@@ -17,6 +17,7 @@ const Products = () => {
       shortDesc: "Make your home solar powered",
       img: "/images/panel.png",
       bgColor: "bg-cyan-400 text-black",
+      navigateTo: "/solar-brands", // updated
     },
     {
       id: "cctv",
@@ -24,6 +25,7 @@ const Products = () => {
       shortDesc: "Make your home secured",
       img: "/images/camera.png",
       bgColor: "bg-[#FDB813] text-black",
+      navigateTo: "/cctv-brands", // updated
     },
   ];
 
@@ -44,7 +46,7 @@ const Products = () => {
               <h3 className="text-3xl font-bold mb-4">{item.title}</h3>
               <p className="mb-5 text-lg">{item.shortDesc}</p>
               <button
-                onClick={() => navigate(`/product/${item.id}`)}
+                onClick={() => navigate(item.navigateTo)}
                 className="bg-white text-black font-semibold px-6 py-3 rounded-xl shadow hover:bg-gray-100 transition"
               >
                 Explore Products

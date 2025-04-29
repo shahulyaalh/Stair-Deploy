@@ -6,7 +6,7 @@ import {
   useLocation,
   Navigate,
 } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -14,14 +14,28 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Loader from "./components/Loader/Loader";
 import LogoLoader from "./components/ui/Intro/LogoLoader";
-import ProductDetail from "./Pages/ProductDetail";
+// import ProductDetail from "./Pages/ProductDetail";
 import Contact from "./Pages/Contact";
 import Products from "./Pages/Products";
 import Gallery from "./Pages/Gallery";
 import AdminLogin from "./Pages/AdminLogin";
 import AdminDashboard from "./Pages/AdminDashboard";
-import CctvProductsPage from "./Pages/CctvProductsPage";
-import SolarProductsPage from "./Pages/SolarProductsPage";
+import SolarCategories from "./Pages/SolarCategories";
+import CctvCategories from "./Pages/CctvCategories";
+import SolarSubCategory from "./Pages/SolarSubCategory";
+import CctvSubCategory from "./Pages/CctvSubCategory";
+// import CctvProductsPage from "./Pages/CctvProductsPage";
+// import SolarProductsPage from "./Pages/SolarProductsPage";
+
+// New Pages
+// import CctvBrandsPage from "./Pages/CctvBrandsPage";
+// import SolarBrandsPage from "./Pages/SolarBrandsPage";
+// import CctvBrandProductsPage from "./Pages/CctvBrandProductsPage";
+// import SolarBrandProductsPage from "./Pages/SolarBrandProductsPage";
+// import SolarProductDivisionPage from "./Pages/SolarProductDivisionPage";
+// import CctvProductDivisionPage from "./Pages/CctvProductDivisionPage";
+// import SolarSpecificProductPage from "./Pages/SolarSpecificProductPage";
+// import CctvSpecificProductPage from "./Pages/CctvSpecificProductPage";
 
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem("adminToken");
@@ -39,41 +53,65 @@ const AppContent = () => {
   }, [location]);
 
   if (loading) {
-    return <Loader />;
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Loader />
+        </motion.div>
+      </div>
+    );
   }
 
   return (
-    <div className="pt-10">
+    <>
       <Header />
-      <motion.div
-        key={location.pathname}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/product/solar" element={<SolarProductsPage />} />
-          <Route path="/product/cctv" element={<CctvProductsPage />} />
-          <Route path="/product/:id" element={<ProductDetail />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/admin-login" element={<AdminLogin />} />
-          <Route
-            path="/admin-dashboard"
-            element={
-              <ProtectedRoute>
-                <AdminDashboard />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
-      </motion.div>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={location.pathname}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className="pt-10"
+        >
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/solar-brands" element={<SolarCategories />} />
+            <Route
+              path="/solar-categories/:categoryId"
+              element={<SolarSubCategory />}
+            />
+
+            <Route path="/cctv-brands" element={<CctvCategories />} />
+            <Route path="/cctv/:cctvCategoryId" element={<CctvSubCategory />} />
+
+            <Route path="/gallery" element={<Gallery />} />
+
+            <Route path="/admin-login" element={<AdminLogin />} />
+            <Route
+              path="/admin-dashboard"
+              element={
+                <ProtectedRoute>
+                  <AdminDashboard />
+                </ProtectedRoute>
+              }
+            />
+            {/* 404 fallback route */}
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        </motion.div>
+      </AnimatePresence>
       <Footer />
-    </div>
+    </>
   );
 };
 
@@ -88,7 +126,24 @@ const App = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  return <Router>{showLogoLoader ? <LogoLoader /> : <AppContent />}</Router>;
+  return (
+    <Router basename="/">
+      {showLogoLoader ? (
+        <div className="min-h-screen flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <LogoLoader />
+          </motion.div>
+        </div>
+      ) : (
+        <AppContent />
+      )}
+    </Router>
+  );
 };
 
 export default App;

@@ -50,8 +50,8 @@ const Contact = () => {
             </p>
             <ul className="space-y-4 text-sm text-gray-300">
               <li className="flex items-center gap-2">
-                📍 1st Floor, Sundaram Complex, 1st Street, Postal Colony,
-                N.K.Road, Thanjavur-6
+                📍 No.12, 1st Floor, Sundaram, Complex, Rahman nagar, Thanjavur
+                P&t Colony, Thanjavur, Thanjavur-613006, Tamil Nadu.
               </li>
               <li className="flex items-center gap-2">📞 73057 81227</li>
               <li className="flex items-center gap-2">
