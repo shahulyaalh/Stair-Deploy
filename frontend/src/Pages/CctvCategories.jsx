@@ -30,7 +30,7 @@ const CctvCategories = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Our CCTV Categories
+        Our CCTV Products
       </motion.h2>
 
       <div className="grid md:grid-cols-3 gap-8">
