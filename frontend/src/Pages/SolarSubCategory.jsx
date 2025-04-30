@@ -4,19 +4,31 @@ import { motion } from "framer-motion";
 
 const categoryData = {
   panel: [
-    { name: "Monocrystalline Solar Panels", image: "/images/mono.png" },
-    { name: "Polycrystalline Solar Panels", image: "/images/poly.png" },
-    { name: "Thin-Film Solar Panels", image: "/images/thin.png" },
+    {
+      name: "Monocrystalline Solar Panels",
+      image: "/images/Mono Crystalline Solar Panel.png",
+    },
+    {
+      name: "Polycrystalline Solar Panels",
+      image: "/images/Poly Crystalline Solar Panel.png",
+    },
+    {
+      name: "Thin-Film Solar Panels",
+      image: "/images/Thin-Film Solar Panel.png",
+    },
   ],
   inverter: [
-    { name: "String Inverters", image: "/images/string.png" },
-    { name: "Micro Inverters", image: "/images/micro.png" },
-    { name: "Hybrid Inverters", image: "/images/hybrid.png" },
+    { name: "String Inverters", image: "/images/String Inverter.png" },
+    { name: "Micro Inverters", image: "/images/Micro Inverter.png" },
+    { name: "Hybrid Inverters", image: "/images/Hybrid Inverter.png" },
   ],
   battery: [
-    { name: "Lithium-Ion Batteries", image: "/images/lithium.png" },
-    { name: "Flow Batteries", image: "/images/flow.png" },
-    { name: "Nickel-Cadmium Batteries", image: "/images/nickel.png" },
+    { name: "Lithium-Ion Batteries", image: "/images/Lithium-ion Battery.png" },
+    { name: "Flow Batteries", image: "/images/Flow Battery.png" },
+    {
+      name: "Nickel-Cadmium Batteries",
+      image: "/images/Nickel Cadmium Battery.png",
+    },
   ],
 };
 
@@ -32,7 +44,7 @@ const SolarSubCategory = () => {
   const displayName = displayNames[categoryId] || categoryId;
 
   return (
-    <section className="pt-28 px-6 md:px-16 bg-white min-h-screen">
+    <section className="pt-28 pb-20 px-6 md:px-16 bg-white min-h-screen">
       <motion.h2
         className="text-3xl font-bold mb-10 text-center capitalize"
         initial={{ opacity: 0, y: -20 }}

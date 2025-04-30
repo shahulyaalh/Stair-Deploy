@@ -15,22 +15,41 @@ const Products = () => {
       id: "solar",
       title: "Solar Products",
       shortDesc: "Make your home solar powered",
-      img: "/images/panel.png",
+      images: [
+        "/images/panel.png",
+        "/images/inverter.png",
+        "/images/battery.png",
+      ],
       bgColor: "bg-cyan-400 text-black",
-      navigateTo: "/solar-brands", // updated
+      navigateTo: "/solar-brands",
     },
     {
       id: "cctv",
       title: "CCTV Camera Products",
       shortDesc: "Make your home secured",
-      img: "/images/camera.png",
+      images: ["/images/camera.png"],
       bgColor: "bg-[#FDB813] text-black",
-      navigateTo: "/cctv-brands", // updated
+      navigateTo: "/cctv-brands",
     },
   ];
 
+  const cctvBrands = [
+    { name: "Hikvision", logo: "/images/brands/Hikvision.png" },
+    { name: "CP Plus", logo: "/images/brands/Cp plus.png" },
+    { name: "ZICOM", logo: "/images/brands/zicom.png" },
+    { name: "Godrej", logo: "/images/brands/Godrej.png" },
+  ];
+
+  const solarBrands = [
+    { name: "TATA Power", logo: "/images/brands/Tata Power.png" },
+    { name: "Waaree", logo: "/images/brands/Waaree.png" },
+    { name: "Loom Solar", logo: "/images/brands/Loom Solar.png" },
+    { name: "Luminous", logo: "/images/brands/Luminous.png" },
+    { name: "UTL", logo: "/images/brands/UTL.png" },
+  ];
+
   return (
-    <section className="pt-28 px-6 md:px-16 bg-gray-50 min-h-screen">
+    <section className="pt-28 px-6 md:px-16 bg-gray-50 min-h-screen pb-20">
       <h2 className="text-4xl font-bold mb-10 text-center">
         Our Product Categories
       </h2>
@@ -53,16 +72,65 @@ const Products = () => {
               </button>
             </div>
 
-            {/* Product image */}
-            <div className="mt-6 md:mt-0 md:absolute md:bottom-6 md:right-6">
-              <img
-                src={item.img}
-                alt={item.title}
-                className="w-52 h-auto object-contain transition-transform duration-300 ease-in-out transform hover:scale-110"
-              />
+            {/* Product images */}
+            <div className="mt-6 md:mt-0 md:absolute md:bottom-6 md:right-6 flex gap-4">
+              {item.images.map((src, index) => (
+                <img
+                  key={index}
+                  src={src}
+                  alt={`${item.title} ${index + 1}`}
+                  className="w-32 md:w-40 h-auto object-contain transition-transform duration-300 ease-in-out transform hover:scale-105"
+                />
+              ))}
             </div>
           </div>
         ))}
+      </div>
+      {/* Partners Section */}
+      <div className="mt-24 space-y-12">
+        {/* CCTV Brands */}
+        <div>
+          <h3 className="text-2xl font-bold mb-6 text-center">
+            Our leading brands for CCTV Cameras
+          </h3>
+          <div className="flex overflow-x-auto gap-12 justify-center items-end px-4 md:px-0">
+            {cctvBrands.map((brand, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 flex flex-col items-center min-w-[100px]"
+              >
+                <img
+                  src={brand.logo}
+                  alt={brand.name}
+                  className="w-24 h-24 object-contain mb-2"
+                />
+                <p className="text-center font-medium">{brand.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Solar Brands */}
+        <div>
+          <h3 className="text-2xl font-bold mb-6 text-center">
+            Our leading brands for Solar Systems
+          </h3>
+          <div className="flex overflow-x-auto gap-12 justify-center items-end px-4 md:px-0">
+            {solarBrands.map((brand, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 flex flex-col items-center min-w-[100px]"
+              >
+                <img
+                  src={brand.logo}
+                  alt={brand.name}
+                  className="w-24 h-24 object-contain mb-2"
+                />
+                <p className="text-center font-medium">{brand.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
