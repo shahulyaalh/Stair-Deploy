@@ -24,6 +24,9 @@ import SolarCategories from "./Pages/SolarCategories";
 import CctvCategories from "./Pages/CctvCategories";
 import SolarSubCategory from "./Pages/SolarSubCategory";
 import CctvSubCategory from "./Pages/CctvSubCategory";
+import LogoLoader3DSpin from "./components/ui/Intro/LogoLoader";
+import LogoLoaderZoomFade from "./components/ui/Intro/LogoLoader";
+import ShockwaveExplosionLoader from "./components/ui/Intro/LogoLoader";
 // import CctvProductsPage from "./Pages/CctvProductsPage";
 // import SolarProductsPage from "./Pages/SolarProductsPage";
 
@@ -136,7 +139,7 @@ const App = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <LogoLoader />
+            <ShockwaveExplosionLoader />
           </motion.div>
         </div>
       ) : (

@@ -1,44 +1,117 @@
-import React from "react";
-import logo from "../../../assets/logo.png"; // ✅ Adjust path if needed
+import React, { useEffect, useState } from "react";
+import logo from "../../../assets/logo.png"; // ✅ Adjust path
 
 const LogoLoader = () => {
-  return (
-    <div className="fixed top-0 left-0 w-full h-full bg-white z-50 flex items-center justify-center">
-      <div className="relative w-52 h-52 animate-bounce">
-        {" "}
-        {/* 👈 Bounce both inside */}
-        {/* Center Logo */}
-        <img
-          src={logo}
-          alt="Company Logo"
-          className="absolute inset-0 m-auto w-28 h-28 z-10"
-        />
-        {/* Rotating Text Circle */}
-        <svg className="w-full h-full animate-spin-slow" viewBox="0 0 100 100">
-          <defs>
-            <path
-              id="circlePath"
-              d="
-                M 50, 50
-                m -35, 0
-                a 35,35 0 1,1 70,0
-                a 35,35 0 1,1 -70,0"
-            />
-          </defs>
+  const [merged, setMerged] = useState(false);
 
-          <text
-            fontSize="5"
-            fill="#1f2937"
-            fontWeight="bold"
-            letterSpacing="2"
-            className="uppercase"
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setMerged(true);
+    }, 1800); // After the initial entry animations
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div className="fixed top-0 left-0 w-full h-full bg-white z-50 flex items-center justify-center overflow-hidden">
+      {!merged && (
+        <>
+          <div className="absolute w-52 h-52 animate-logo-move-rotate">
+            <img
+              src={logo}
+              alt="Company Logo"
+              className="absolute inset-0 m-auto w-28 h-28 z-10"
+            />
+          </div>
+
+          <div className="absolute w-52 h-52 animate-text-move-rotate">
+            <svg className="w-full h-full" viewBox="0 0 100 100">
+              <defs>
+                <path
+                  id="circlePath"
+                  d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0"
+                />
+              </defs>
+              <text
+                fontSize="5"
+                fill="#1f2937"
+                fontWeight="bold"
+                letterSpacing="2"
+                className="uppercase"
+              >
+                <textPath xlinkHref="#circlePath" startOffset="0%">
+                  Stair Ecosystem Pvt. Ltd • Stair Ecosystem Pvt. Ltd •
+                </textPath>
+              </text>
+            </svg>
+          </div>
+        </>
+      )}
+
+      {merged && (
+        <div className="relative w-52 h-52 animate-bounce-once">
+          <img
+            src={logo}
+            alt="Company Logo"
+            className="absolute inset-0 m-auto w-28 h-28 z-10"
+          />
+          <svg
+            className="w-full h-full absolute inset-0 m-auto"
+            viewBox="0 0 100 100"
           >
-            <textPath xlinkHref="#circlePath" startOffset="0%">
-              Stair Ecosystem Pvt. Ltd • Stair Ecosystem Pvt. Ltd •
-            </textPath>
-          </text>
-        </svg>
-      </div>
+            <defs>
+              <path
+                id="circlePath"
+                d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0"
+              />
+            </defs>
+            <text
+              fontSize="5"
+              fill="#1f2937"
+              fontWeight="bold"
+              letterSpacing="2"
+              className="uppercase"
+            >
+              <textPath xlinkHref="#circlePath" startOffset="0%">
+                Stair Ecosystem Pvt. Ltd • Stair Ecosystem Pvt. Ltd •
+              </textPath>
+            </text>
+          </svg>
+        </div>
+      )}
+
+      <style>{`
+        @keyframes logo-move-rotate {
+          0% { transform: translateX(-200%) rotate(0deg); }
+          60% { transform: translateX(0) rotate(360deg); }
+          100% { transform: translateX(0); }
+        }
+
+        @keyframes text-move-rotate {
+          0% { transform: translateX(200%) rotate(0deg); }
+          60% { transform: translateX(0) rotate(-360deg); }
+          100% { transform: translateX(0); }
+        }
+
+        @keyframes bounceOnce {
+          0% { transform: scale(1); }
+          30% { transform: scale(1.1); }
+          60% { transform: scale(0.95); }
+          100% { transform: scale(1); }
+        }
+
+        .animate-logo-move-rotate {
+          animation: logo-move-rotate 1.8s ease-in-out forwards;
+        }
+
+        .animate-text-move-rotate {
+          animation: text-move-rotate 1.8s ease-in-out forwards;
+        }
+
+        .animate-bounce-once {
+          animation: bounceOnce 0.6s ease-out;
+        }
+      `}</style>
     </div>
   );
 };
