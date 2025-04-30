@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logo from "../../../assets/logo.png"; // ✅ Adjust path
+import logo from "../../../assets/logo.png";
 
 const LogoLoader = () => {
   const [merged, setMerged] = useState(false);
@@ -7,7 +7,7 @@ const LogoLoader = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setMerged(true);
-    }, 1800); // After the initial entry animations
+    }, 2000); // Delay sync with animation
 
     return () => clearTimeout(timer);
   }, []);
@@ -82,14 +82,14 @@ const LogoLoader = () => {
 
       <style>{`
         @keyframes logo-move-rotate {
-          0% { transform: translateX(-200%) rotate(0deg); }
-          60% { transform: translateX(0) rotate(360deg); }
+          0% { transform: translateX(-300%) rotate(0deg); }
+          60% { transform: translateX(0) rotate(540deg); }
           100% { transform: translateX(0); }
         }
 
         @keyframes text-move-rotate {
-          0% { transform: translateX(200%) rotate(0deg); }
-          60% { transform: translateX(0) rotate(-360deg); }
+          0% { transform: translateX(300%) rotate(0deg); }
+          60% { transform: translateX(0) rotate(-540deg); }
           100% { transform: translateX(0); }
         }
 
@@ -101,11 +101,11 @@ const LogoLoader = () => {
         }
 
         .animate-logo-move-rotate {
-          animation: logo-move-rotate 1.8s ease-in-out forwards;
+          animation: logo-move-rotate 2s ease-in-out forwards;
         }
 
         .animate-text-move-rotate {
-          animation: text-move-rotate 1.8s ease-in-out forwards;
+          animation: text-move-rotate 2s ease-in-out forwards;
         }
 
         .animate-bounce-once {

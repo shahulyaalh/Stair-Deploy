@@ -139,7 +139,7 @@ const App = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <ShockwaveExplosionLoader />
+            <LogoLoader />
           </motion.div>
         </div>
       ) : (
