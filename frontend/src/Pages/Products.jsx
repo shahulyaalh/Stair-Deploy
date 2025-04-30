@@ -79,13 +79,14 @@ const Products = () => {
                   key={index}
                   src={src}
                   alt={`${item.title} ${index + 1}`}
-                  className="w-32 md:w-40 h-auto object-contain transition-transform duration-300 ease-in-out transform hover:scale-105"
+                  className="w-24 sm:w-28 md:w-40 h-auto object-contain transition-transform duration-300 ease-in-out transform hover:scale-105"
                 />
               ))}
             </div>
           </div>
         ))}
       </div>
+
       {/* Partners Section */}
       <div className="mt-24 space-y-12">
         {/* CCTV Brands */}
