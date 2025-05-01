@@ -10,6 +10,7 @@ import { InfiniteMovingCardsDemo } from "../components/Shared/InfiniteMovingCard
 import Products from "./Products";
 import WhyChooseUs from "../components/Home/WhyChooseUs";
 import AboutSection from "../components/Home/AboutSection";
+import Slogan from "../components/ui/Intro/Slogan";
 
 const Home = () => {
   const navigate = useNavigate();

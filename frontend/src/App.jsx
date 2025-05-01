@@ -7,7 +7,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { registerSW } from "virtual:pwa-register"; // PWA update handler
+import { registerSW } from "virtual:pwa-register";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -15,6 +15,7 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Loader from "./components/Loader/Loader";
 import LogoLoader from "./components/ui/Intro/LogoLoader";
+import Slogan from "./components/ui/Intro/Slogan"; // ✅ Import Slogan component
 import Contact from "./Pages/Contact";
 import Products from "./Pages/Products";
 import Gallery from "./Pages/Gallery";
@@ -24,6 +25,7 @@ import SolarCategories from "./Pages/SolarCategories";
 import CctvCategories from "./Pages/CctvCategories";
 import SolarSubCategory from "./Pages/SolarSubCategory";
 import CctvSubCategory from "./Pages/CctvSubCategory";
+import { SparklesPreview } from "./components/ui/SparklesPreview";
 
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem("adminToken");
@@ -100,6 +102,7 @@ const AppContent = () => {
 
 const App = () => {
   const [showLogoLoader, setShowLogoLoader] = useState(true);
+  const [showSlogan, setShowSlogan] = useState(false);
 
   useEffect(() => {
     const updateSW = registerSW({
@@ -111,10 +114,23 @@ const App = () => {
     });
   }, []);
 
+  useEffect(() => {
+    if (!showLogoLoader) {
+      // Show slogan for 3 seconds after logo loader finishes
+      setShowSlogan(true);
+      const timer = setTimeout(() => {
+        setShowSlogan(false);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [showLogoLoader]);
+
   return (
     <Router basename="/">
       {showLogoLoader ? (
         <LogoLoader onComplete={() => setShowLogoLoader(false)} />
+      ) : showSlogan ? (
+        <SparklesPreview />
       ) : (
         <AppContent />
       )}

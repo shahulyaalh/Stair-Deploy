@@ -14,7 +14,7 @@ const Products = () => {
     {
       id: "solar",
       title: "Solar Products",
-      shortDesc: "Make your home solar powered",
+      shortDesc: "Light up your home and business with solar energy",
       images: [
         "/images/panel.png",
         "/images/inverter.png",
@@ -26,8 +26,12 @@ const Products = () => {
     {
       id: "cctv",
       title: "CCTV Camera Products",
-      shortDesc: "Make your home secured",
-      images: ["/images/camera.png"],
+      shortDesc: "Elite protection for home and businesss",
+      images: [
+        "/images/camera.png",
+        "/images/camera1.png",
+        "/images/camera2.png",
+      ],
       bgColor: "bg-[#FDB813] text-black",
       navigateTo: "/cctv-brands",
     },
