@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 import logo from "../../../assets/logo.png";
 
-const LogoLoader = () => {
+const LogoLoader = ({ onComplete }) => {
   const [merged, setMerged] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setMerged(true);
-    }, 2000); // Delay sync with animation
-
+      const completeTimer = setTimeout(() => {
+        onComplete(); // Notify App.tsx to proceed
+      }, 600); // Wait for bounce animation
+      return () => clearTimeout(completeTimer);
+    }, 2000); // Animation timing
     return () => clearTimeout(timer);
-  }, []);
+  }, [onComplete]);
 
   return (
     <div className="fixed top-0 left-0 w-full h-full bg-white z-50 flex items-center justify-center overflow-hidden">
