@@ -120,7 +120,7 @@ const App = () => {
       setShowSlogan(true);
       const timer = setTimeout(() => {
         setShowSlogan(false);
-      }, 2500);
+      }, 4000);
       return () => clearTimeout(timer);
     }
   }, [showLogoLoader]);
