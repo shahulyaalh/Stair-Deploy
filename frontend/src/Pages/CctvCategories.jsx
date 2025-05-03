@@ -38,18 +38,17 @@ const CctvCategories = () => {
           <motion.div
             key={cat.id}
             onClick={() => navigate(`/cctv/${cat.id}`)} // ✅ Navigate to subcategory
-            className="cursor-pointer bg-gray-100 rounded-3xl p-6 flex flex-col items-center shadow-lg hover:shadow-2xl transition duration-300"
+            className="cursor-pointer bg-blue-900 rounded-3xl p-6 flex flex-col items-center shadow-xl hover:shadow-2xl hover:bg-blue-700 transition duration-300 transform hover:scale-105"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2, duration: 0.6 }}
-            whileHover={{ scale: 1.05 }}
           >
             <img
               src={cat.image}
               alt={cat.name}
               className="w-52 h-52 object-contain mb-4"
             />
-            <h3 className="text-xl font-semibold">{cat.name}</h3>
+            <h3 className="text-xl font-semibold text-gray-200">{cat.name}</h3>
           </motion.div>
         ))}
       </div>
