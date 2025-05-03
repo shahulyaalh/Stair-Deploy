@@ -1,122 +1,67 @@
 import React, { useEffect, useState } from "react";
 import logo from "../../../assets/logo.png";
 
-const LogoLoader = ({ onComplete }) => {
+const CinematicLogoLoader = ({ onComplete }) => {
   const [merged, setMerged] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setMerged(true);
       const completeTimer = setTimeout(() => {
-        onComplete(); // Notify App.tsx to proceed
-      }, 600); // Wait for bounce animation
+        onComplete();
+      }, 700); // Slight delay after merge
       return () => clearTimeout(completeTimer);
-    }, 2000); // Animation timing
+    }, 2000); // Total pre-merge time
     return () => clearTimeout(timer);
   }, [onComplete]);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full bg-white z-50 flex items-center justify-center overflow-hidden">
+    <div className="fixed top-0 left-0 w-full h-full bg-black z-50 flex items-center justify-center overflow-hidden">
       {!merged && (
         <>
-          <div className="absolute w-52 h-52 animate-logo-move-rotate">
+          <div className="absolute w-52 h-52 animate-cinematicZoomIn">
             <img
               src={logo}
               alt="Company Logo"
               className="absolute inset-0 m-auto w-28 h-28 z-10"
             />
           </div>
-
-          <div className="absolute w-52 h-52 animate-text-move-rotate">
-            <svg className="w-full h-full" viewBox="0 0 100 100">
-              <defs>
-                <path
-                  id="circlePath"
-                  d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0"
-                />
-              </defs>
-              <text
-                fontSize="5"
-                fill="#1f2937"
-                fontWeight="bold"
-                letterSpacing="2"
-                className="uppercase"
-              >
-                <textPath xlinkHref="#circlePath" startOffset="0%">
-                  Stair Ecosystem Pvt. Ltd • Stair Ecosystem Pvt. Ltd •
-                </textPath>
-              </text>
-            </svg>
-          </div>
         </>
       )}
 
       {merged && (
-        <div className="relative w-52 h-52 animate-bounce-once">
+        <div className="relative w-52 h-52 animate-cinematicGlowAndZoom">
           <img
             src={logo}
             alt="Company Logo"
             className="absolute inset-0 m-auto w-28 h-28 z-10"
           />
-          <svg
-            className="w-full h-full absolute inset-0 m-auto"
-            viewBox="0 0 100 100"
-          >
-            <defs>
-              <path
-                id="circlePath"
-                d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0"
-              />
-            </defs>
-            <text
-              fontSize="5"
-              fill="#1f2937"
-              fontWeight="bold"
-              letterSpacing="2"
-              className="uppercase"
-            >
-              <textPath xlinkHref="#circlePath" startOffset="0%">
-                Stair Ecosystem Pvt. Ltd • Stair Ecosystem Pvt. Ltd •
-              </textPath>
-            </text>
-          </svg>
         </div>
       )}
 
       <style>{`
-        @keyframes logo-move-rotate {
-          0% { transform: translateX(-300%) rotate(0deg); }
-          60% { transform: translateX(0) rotate(540deg); }
-          100% { transform: translateX(0); }
+        @keyframes cinematicZoomIn {
+          0% { transform: scale(0.3) rotateY(90deg); opacity: 0; }
+          50% { transform: scale(1.1) rotateY(45deg); opacity: 0.7; }
+          100% { transform: scale(1) rotateY(0deg); opacity: 1; }
         }
 
-        @keyframes text-move-rotate {
-          0% { transform: translateX(300%) rotate(0deg); }
-          60% { transform: translateX(0) rotate(-540deg); }
-          100% { transform: translateX(0); }
+        @keyframes cinematicGlowAndZoom {
+          0% { transform: scale(1); filter: brightness(1); }
+          50% { transform: scale(1.05); filter: brightness(1.3); }
+          100% { transform: scale(1); filter: brightness(1); }
         }
 
-        @keyframes bounceOnce {
-          0% { transform: scale(1); }
-          30% { transform: scale(1.1); }
-          60% { transform: scale(0.95); }
-          100% { transform: scale(1); }
+        .animate-cinematicZoomIn {
+          animation: cinematicZoomIn 2s ease-out forwards;
         }
 
-        .animate-logo-move-rotate {
-          animation: logo-move-rotate 2s ease-in-out forwards;
-        }
-
-        .animate-text-move-rotate {
-          animation: text-move-rotate 2s ease-in-out forwards;
-        }
-
-        .animate-bounce-once {
-          animation: bounceOnce 0.6s ease-out;
+        .animate-cinematicGlowAndZoom {
+          animation: cinematicGlowAndZoom 1s ease-out forwards;
         }
       `}</style>
     </div>
   );
 };
 
-export default LogoLoader;
+export default CinematicLogoLoader;

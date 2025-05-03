@@ -77,7 +77,7 @@ const Products = () => {
             </div>
 
             {/* Product images */}
-            <div className="mt-6 md:mt-0 md:absolute md:bottom-6 md:right-6 flex gap-4">
+            <div className="mt-6 md:mt-0 md:absolute md:bottom-6 md:right-6 flex gap-4 flex-wrap justify-center md:justify-end">
               {item.images.map((src, index) => (
                 <img
                   key={index}
@@ -98,18 +98,20 @@ const Products = () => {
           <h3 className="text-2xl font-bold mb-6 text-center">
             Our leading brands for CCTV Cameras
           </h3>
-          <div className="flex overflow-x-auto gap-12 justify-center items-end px-4 md:px-0">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-center px-4 md:px-0">
             {cctvBrands.map((brand, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 flex flex-col items-center min-w-[100px]"
+                className="flex flex-col items-center min-w-[100px]"
               >
                 <img
                   src={brand.logo}
                   alt={brand.name}
                   className="w-24 h-24 object-contain mb-2"
                 />
-                <p className="text-center font-medium">{brand.name}</p>
+                <p className="text-center text-sm md:text-base font-medium">
+                  {brand.name}
+                </p>
               </div>
             ))}
           </div>
@@ -120,18 +122,20 @@ const Products = () => {
           <h3 className="text-2xl font-bold mb-6 text-center">
             Our leading brands for Solar Systems
           </h3>
-          <div className="flex overflow-x-auto gap-12 justify-center items-end px-4 md:px-0">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-center px-4 md:px-0">
             {solarBrands.map((brand, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 flex flex-col items-center min-w-[100px]"
+                className="flex flex-col items-center min-w-[100px]"
               >
                 <img
                   src={brand.logo}
                   alt={brand.name}
                   className="w-24 h-24 object-contain mb-2"
                 />
-                <p className="text-center font-medium">{brand.name}</p>
+                <p className="text-center text-sm md:text-base font-medium">
+                  {brand.name}
+                </p>
               </div>
             ))}
           </div>
