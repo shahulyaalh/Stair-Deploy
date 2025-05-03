@@ -125,6 +125,33 @@ const App = () => {
     }
   }, [showLogoLoader]);
 
+  const [deferredPrompt, setDeferredPrompt] = useState(null);
+
+  useEffect(() => {
+    const handler = (e) => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+    };
+    window.addEventListener("beforeinstallprompt", handler);
+    return () => window.removeEventListener("beforeinstallprompt", handler);
+  }, []);
+
+  useEffect(() => {
+    if (!showLogoLoader && !showSlogan && deferredPrompt) {
+      setTimeout(() => {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === "accepted") {
+            console.log("User accepted the install prompt");
+          } else {
+            console.log("User dismissed the install prompt");
+          }
+          setDeferredPrompt(null);
+        });
+      }, 1000);
+    }
+  }, [showLogoLoader, showSlogan, deferredPrompt]);
+
   return (
     <Router basename="/">
       {showLogoLoader ? (
