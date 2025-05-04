@@ -97,14 +97,14 @@ const AppContent = ({ deferredPrompt }) => {
       {!shouldHideFooter && <Footer />}
 
       {/* PWA Install Button */}
-      {deferredPrompt && (
+      {/* {deferredPrompt && (
         <button
           onClick={() => deferredPrompt.prompt()}
           className="fixed bottom-4 right-4 bg-blue-600 text-white px-4 py-2 rounded shadow-lg hover:bg-blue-700 z-50"
         >
           Install App
         </button>
-      )}
+      )} */}
     </>
   );
 };

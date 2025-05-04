@@ -90,52 +90,47 @@ const Products = () => {
           </div>
         ))}
       </div>
-
       {/* Partners Section */}
-      <div className="mt-24 space-y-12">
-        {/* CCTV Brands */}
+      <div className="mt-24">
+        {/* CCTV Brands Section */}
         <div>
           <h3 className="text-2xl font-bold mb-6 text-center">
             Our leading brands for CCTV Cameras
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-center px-4 md:px-0">
+          <div className="flex flex-wrap gap-10 justify-center">
             {cctvBrands.map((brand, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center min-w-[100px]"
+                className="flex flex-col items-center min-w-[120px]"
               >
                 <img
                   src={brand.logo}
                   alt={brand.name}
                   className="w-24 h-24 object-contain mb-2"
                 />
-                <p className="text-center text-sm md:text-base font-medium">
-                  {brand.name}
-                </p>
+                <p className="text-center text-sm font-medium">{brand.name}</p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Solar Brands */}
-        <div>
+        {/* Solar Brands Section */}
+        <div className="mt-16">
           <h3 className="text-2xl font-bold mb-6 text-center">
             Our leading brands for Solar Systems
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-center px-4 md:px-0">
+          <div className="flex flex-wrap gap-10 justify-center">
             {solarBrands.map((brand, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center min-w-[100px]"
+                className="flex flex-col items-center min-w-[120px]"
               >
                 <img
                   src={brand.logo}
                   alt={brand.name}
                   className="w-24 h-24 object-contain mb-2"
                 />
-                <p className="text-center text-sm md:text-base font-medium">
-                  {brand.name}
-                </p>
+                <p className="text-center text-sm font-medium">{brand.name}</p>
               </div>
             ))}
           </div>

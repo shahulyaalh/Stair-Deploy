@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto space-y-10">
         {/* Top section: Logo, text, icons */}
         <div className="flex flex-col items-center space-y-4">
-          <img src="/Logo.png" alt="Logo" className="h-10" />
+          {/* <img src="/Logo.png" alt="Logo" className="h-10" /> */}
           <p className="text-center text-gray-500 max-w-xl">
             Making the world a better place through constructing elegant
             hierarchies.

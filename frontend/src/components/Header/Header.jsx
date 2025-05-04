@@ -9,14 +9,14 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white/50 backdrop-blur-md backdrop-saturate-150 shadow-md fixed w-full top-0 left-0 z-50">
+    <header className="bg-white shadow-md fixed w-full top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative">
         {/* Logo */}
         <div className="flex items-center space-x-4">
           <img
             src="/Logo.png"
             alt="Stair Ecosystem"
-            className="w-12 h-12 object-contain"
+            className="w-20 h-20 object-contain" // increased size here
           />
           <span className="hidden md:inline text-3xl font-bold text-blue-700 -mt-1">
             Stair Ecosystem Private Limited

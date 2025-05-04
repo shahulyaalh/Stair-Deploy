@@ -7,7 +7,7 @@ const Loader = () => {
       <img
         src={logo}
         alt="Loading..."
-        className="w-24 h-24 animate-bounce" // for bouncing
+        className="w-40 h-40 animate-bounce" // for bouncing
         // className="w-24 h-24 animate-spin" // use this for rotating
       />
     </div>
