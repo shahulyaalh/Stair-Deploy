@@ -10,3 +10,135 @@
 .animate-spin-slow {
   animation: spin-slow 8s linear infinite;
 }
+/* Dark Mode */
+:root {
+  --primary: #your-primary-color; /* Replace with your color */
+  --primary-foreground: #your-primary-foreground-color;
+  --secondary: #your-secondary-color;
+  --secondary-foreground: #your-secondary-foreground-color;
+  --destructive: #your-destructive-color;
+  --destructive-foreground: #your-destructive-foreground-color;
+  --muted: #your-muted-color;
+  --muted-foreground: #your-muted-foreground-color;
+  --accent: #your-accent-color;
+  --accent-foreground: #your-accent-foreground-color;
+  --popover: #your-popover-color;
+  --popover-foreground: #your-popover-foreground-color;
+  --card: #your-card-color;
+  --card-foreground: #your-card-foreground-color;
+  --border-radius: 8px; /* Adjust as needed */
+}
+
+/* Dark mode setup */
+html[data-theme="dark"] {
+  --background: #1a1a1a;
+  --foreground: #f0f0f0;
+  --border: #333;
+  --ring: #ff0; /* Example */
+}
+
+/* Base Styles */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+}
+
+button {
+  border-radius: var(--radius);
+}
+
+/* Keyframes for Accordion */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+/* Animation for Accordion */
+.accordion-down {
+  animation: accordion-down 0.2s ease-out;
+}
+
+.accordion-up {
+  animation: accordion-up 0.2s ease-out;
+}
+
+/* Border Radius */
+.lg {
+  border-radius: var(--radius);
+}
+
+.md {
+  border-radius: calc(var(--radius) - 2px);
+}
+
+.sm {
+  border-radius: calc(var(--radius) - 4px);
+}
+
+/* Custom Colors */
+.border {
+  border-color: var(--border);
+}
+
+.input {
+  background-color: var(--input);
+}
+
+.ring {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.primary {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.secondary {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+}
+
+.destructive {
+  background-color: var(--destructive);
+  color: var(--destructive-foreground);
+}
+
+.muted {
+  background-color: var(--muted);
+  color: var(--muted-foreground);
+}
+
+.accent {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.popover {
+  background-color: var(--popover);
+  color: var(--popover-foreground);
+}
+
+.card {
+  background-color: var(--card);
+  color: var(--card-foreground);
+}
