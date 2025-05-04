@@ -53,7 +53,7 @@ const Contact = () => {
                 📍 No.12, 1st Floor, Sundaram, Complex, Rahman nagar, Thanjavur
                 P&t Colony, Thanjavur, Thanjavur-613006, Tamil Nadu.
               </li>
-              <li className="flex items-center gap-2">📞 73057 81227</li>
+              <li className="flex items-center gap-2">📞+91 73057 81227</li>
               <li className="flex items-center gap-2">
                 📧 stairecosystem@gmail.com
               </li>
