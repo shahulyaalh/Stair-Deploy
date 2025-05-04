@@ -30,7 +30,7 @@ const SolarCategories = () => {
         {solarCategories.map((cat, index) => (
           <motion.div
             key={cat.id}
-            className="bg-gray-100 rounded-3xl p-6 flex flex-col items-center shadow-lg hover:shadow-2xl transition duration-300 cursor-pointer"
+            className="bg-[#fff9c4] rounded-3xl p-6 flex flex-col items-center shadow-lg hover:shadow-2xl transition duration-300 cursor-pointer"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2, duration: 0.6 }}

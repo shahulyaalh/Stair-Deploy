@@ -58,7 +58,7 @@ const SolarSubCategory = () => {
         {products.map((product, index) => (
           <motion.div
             key={index}
-            className="bg-gray-100 rounded-3xl p-6 flex flex-col items-center shadow-md hover:shadow-xl transition duration-300"
+            className="bg-[#fff9c4] rounded-3xl p-6 flex flex-col items-center shadow-md hover:shadow-xl transition duration-300"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2, duration: 0.6 }}
