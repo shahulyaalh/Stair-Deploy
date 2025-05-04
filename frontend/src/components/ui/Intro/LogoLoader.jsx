@@ -9,37 +9,34 @@ const CinematicLogoLoader = ({ onComplete }) => {
       setRotating(true);
       const completeTimer = setTimeout(() => {
         onComplete();
-      }, 4000);
+      }, 3000); // Delay before ending the loader
       return () => clearTimeout(completeTimer);
-    }, 1000);
+    }, 1000); // Delay before starting rotation
     return () => clearTimeout(timer);
   }, [onComplete]);
 
   return (
     <div className="fixed top-0 left-0 w-full h-full bg-white z-50 flex items-center justify-center overflow-hidden">
-      <div className="perspective-3d w-72 h-72 flex items-center justify-center">
-        <div className={`${rotating ? "animate-rotate3D" : ""} w-60 h-60`}>
-          <img
-            src={logo}
-            alt="Company Logo"
-            className="w-full h-full object-contain"
-          />
-        </div>
+      <div
+        className={`relative ${
+          rotating ? "animate-slowClockwiseSpin" : ""
+        } w-72 h-72`}
+      >
+        <img
+          src={logo}
+          alt="Company Logo"
+          className="absolute inset-0 m-auto w-60 h-60 z-10"
+        />
       </div>
 
       <style>{`
-        .perspective-3d {
-          perspective: 1000px;
+        @keyframes slowClockwiseSpin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
         }
 
-        @keyframes rotate3D {
-          0% { transform: rotateY(0deg); }
-          100% { transform: rotateY(360deg); }
-        }
-
-        .animate-rotate3D {
-          transform-style: preserve-3d;
-          animation: rotate3D 8s linear infinite;
+        .animate-slowClockwiseSpin {
+          animation: slowClockwiseSpin 5s linear infinite;
         }
       `}</style>
     </div>
