@@ -29,14 +29,15 @@ const SolarCategories = () => {
       <div className="grid md:grid-cols-3 gap-8">
         {solarCategories.map((cat, index) => (
           <motion.div
-            key={cat.id}
-            className="bg-gray-100 rounded-3xl p-6 flex flex-col items-center shadow-lg hover:shadow-2xl transition duration-300 cursor-pointer"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.2, duration: 0.6 }}
-            whileHover={{ scale: 1.05 }}
-            onClick={() => handleClick(cat.id)}
-          >
+  key={cat.id}
+  className="bg-[#fff9c4] rounded-3xl p-6 flex flex-col items-center shadow-lg hover:shadow-2xl transition duration-300 cursor-pointer"
+  initial={{ opacity: 0, y: 50 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: index * 0.2, duration: 0.6 }}
+  whileHover={{ scale: 1.05 }}
+  onClick={() => handleClick(cat.id)}
+>
+
             <img
               src={cat.image}
               alt={cat.name}
