@@ -15,7 +15,7 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Loader from "./components/Loader/Loader";
 import LogoLoader from "./components/ui/Intro/LogoLoader";
-import Slogan from "./components/ui/Intro/Slogan"; // ✅ Import Slogan component
+import { SparklesPreview } from "./components/ui/SparklesPreview";
 import Contact from "./Pages/Contact";
 import Products from "./Pages/Products";
 import Gallery from "./Pages/Gallery";
@@ -25,14 +25,13 @@ import SolarCategories from "./Pages/SolarCategories";
 import CctvCategories from "./Pages/CctvCategories";
 import SolarSubCategory from "./Pages/SolarSubCategory";
 import CctvSubCategory from "./Pages/CctvSubCategory";
-import { SparklesPreview } from "./components/ui/SparklesPreview";
 
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem("adminToken");
   return token ? children : <Navigate to="/admin-login" replace />;
 };
 
-const AppContent = () => {
+const AppContent = ({ deferredPrompt }) => {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
 
@@ -42,22 +41,21 @@ const AppContent = () => {
     return () => clearTimeout(timeout);
   }, [location]);
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Loader />
-        </motion.div>
-      </div>
-    );
-  }
+  const hideFooterRoutes = ["/admin-login", "/admin-dashboard"];
+  const shouldHideFooter = hideFooterRoutes.includes(location.pathname);
 
-  return (
+  return loading ? (
+    <div className="min-h-screen flex items-center justify-center">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <Loader />
+      </motion.div>
+    </div>
+  ) : (
     <>
       <Header />
       <AnimatePresence mode="wait">
@@ -95,7 +93,18 @@ const AppContent = () => {
           </Routes>
         </motion.div>
       </AnimatePresence>
-      <Footer />
+
+      {!shouldHideFooter && <Footer />}
+
+      {/* PWA Install Button */}
+      {deferredPrompt && (
+        <button
+          onClick={() => deferredPrompt.prompt()}
+          className="fixed bottom-4 right-4 bg-blue-600 text-white px-4 py-2 rounded shadow-lg hover:bg-blue-700 z-50"
+        >
+          Install App
+        </button>
+      )}
     </>
   );
 };
@@ -103,29 +112,29 @@ const AppContent = () => {
 const App = () => {
   const [showLogoLoader, setShowLogoLoader] = useState(true);
   const [showSlogan, setShowSlogan] = useState(false);
+  const [deferredPrompt, setDeferredPrompt] = useState(null);
 
   useEffect(() => {
-    const updateSW = registerSW({
+    const unregisterSW = registerSW({
       onNeedRefresh() {
         if (confirm("New version available. Refresh now?")) {
-          updateSW(true);
+          window.location.reload();
         }
       },
     });
+
+    return () => {
+      unregisterSW?.();
+    };
   }, []);
 
   useEffect(() => {
     if (!showLogoLoader) {
-      // Show slogan for 3 seconds after logo loader finishes
       setShowSlogan(true);
-      const timer = setTimeout(() => {
-        setShowSlogan(false);
-      }, 4000);
+      const timer = setTimeout(() => setShowSlogan(false), 4000);
       return () => clearTimeout(timer);
     }
   }, [showLogoLoader]);
-
-  const [deferredPrompt, setDeferredPrompt] = useState(null);
 
   useEffect(() => {
     const handler = (e) => {
@@ -143,7 +152,7 @@ const App = () => {
       ) : showSlogan ? (
         <SparklesPreview />
       ) : (
-        <AppContent />
+        <AppContent deferredPrompt={deferredPrompt} />
       )}
     </Router>
   );
