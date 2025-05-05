@@ -16,8 +16,9 @@ const Header = () => {
           <img
             src="/Logo.png"
             alt="Stair Ecosystem"
-            className="w-20 h-20 object-contain" // increased size here
+            className="w-14 h-14 object-contain ml-1 md:w-20 md:h-20" // 👈 Adjusted size & position for mobile
           />
+
           <span className="hidden md:inline text-4xl font-bold text-blue-700 -mt-1">
             Stair Ecosystem Private Limited
           </span>
