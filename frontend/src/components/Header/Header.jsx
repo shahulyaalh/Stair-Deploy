@@ -16,7 +16,7 @@ const Header = () => {
           <img
             src="/Logo.png"
             alt="Stair Ecosystem"
-            className="w-14 h-14 object-contain ml-1 md:w-20 md:h-20" // 👈 Adjusted size & position for mobile
+            className="w-19 h-19 object-contain ml-1 md:w-20 md:h-20" // 👈 Adjusted size & position for mobile
           />
 
           <span className="hidden md:inline text-4xl font-bold text-blue-700 -mt-1">
@@ -25,8 +25,8 @@ const Header = () => {
         </div>
 
         {/* Centered Text in Mobile */}
-        <div className="ml-5 absolute left-1/2 transform -translate-x-1/2 md:hidden">
-          <span className="text-3xl font-bold text-blue-700 -mt-1">
+        <div className="ml-6 absolute left-1/2 transform -translate-x-1/2 md:hidden">
+          <span className="text-2xl font-bold text-blue-700 -mt-1">
             Stair Ecosystem
           </span>
         </div>
