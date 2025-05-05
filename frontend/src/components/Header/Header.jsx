@@ -25,8 +25,8 @@ const Header = () => {
         </div>
 
         {/* Centered Text in Mobile */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 md:hidden">
-          <span className="text-2xl font-bold text-blue-700 -mt-1">
+        <div className="ml-5 absolute left-1/2 transform -translate-x-1/2 md:hidden">
+          <span className="text-3xl font-bold text-blue-700 -mt-1">
             Stair Ecosystem
           </span>
         </div>
