@@ -25,6 +25,7 @@ import SolarCategories from "./Pages/SolarCategories";
 import CctvCategories from "./Pages/CctvCategories";
 import SolarSubCategory from "./Pages/SolarSubCategory";
 import CctvSubCategory from "./Pages/CctvSubCategory";
+import ServicePage from "./Pages/ServicePage";
 
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem("adminToken");
@@ -79,6 +80,7 @@ const AppContent = ({ deferredPrompt }) => {
             />
             <Route path="/cctv-brands" element={<CctvCategories />} />
             <Route path="/cctv/:cctvCategoryId" element={<CctvSubCategory />} />
+            <Route path="/service" element={<ServicePage />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/admin-login" element={<AdminLogin />} />
             <Route

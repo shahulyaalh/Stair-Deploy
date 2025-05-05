@@ -18,7 +18,7 @@ const Header = () => {
             alt="Stair Ecosystem"
             className="w-20 h-20 object-contain" // increased size here
           />
-          <span className="hidden md:inline text-3xl font-bold text-blue-700 -mt-1">
+          <span className="hidden md:inline text-4xl font-bold text-blue-700 -mt-1">
             Stair Ecosystem Private Limited
           </span>
         </div>
@@ -51,7 +51,14 @@ const Header = () => {
             Products
           </Link>
           <Link
-            to="/gallery"
+            to="/service"
+            className="text-gray-700 hover:text-blue-700 font-medium"
+          >
+            Service
+          </Link>
+
+          <Link
+            to="/service"
             className="text-gray-700 hover:text-blue-700 font-medium"
           >
             Gallery
@@ -110,6 +117,13 @@ const Header = () => {
               className="text-gray-700 hover:text-blue-700 font-medium"
             >
               Products
+            </Link>
+            <Link
+              to="/service"
+              onClick={handleLinkClick}
+              className="text-gray-700 hover:text-blue-700 font-medium"
+            >
+              Service
             </Link>
             <Link
               to="/gallery"
