@@ -54,7 +54,7 @@ const Header = () => {
             to="/service"
             className="text-gray-700 hover:text-blue-700 font-medium"
           >
-            Service
+            Services
           </Link>
 
           <Link
@@ -123,7 +123,7 @@ const Header = () => {
               onClick={handleLinkClick}
               className="text-gray-700 hover:text-blue-700 font-medium"
             >
-              Service
+              Services
             </Link>
             <Link
               to="/gallery"
