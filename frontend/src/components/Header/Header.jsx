@@ -21,10 +21,19 @@ const Header = () => {
 
           {/* Desktop Text */}
           <span
-            className="hidden md:inline-block text-blue-700 text-4xl font-bold relative"
+            className="hidden md:inline-block text-blue-700 text-3xl font-bold relative"
             style={{
-              textShadow: "1px 1px 0 #ffffff, 2px 2px 0 #3b82f6", // white highlight, blue shadow
-              fontFamily: `'Poppins', sans-serif`, // or 'Rubik', 'Nunito'
+              fontFamily: "'Arial Black', Arial, sans-serif",
+              fontWeight: "bold",
+              fontSize: "32px",
+              color: "#0074D9", // Blue fill
+              textShadow: `
+              -1px -1px 0 #fff,  
+               1px -1px 0 #fff,
+              -1px  1px 0 #fff,
+               1px  1px 0 #fff
+            `, // Black outline effect
+              letterSpacing: "2px",
             }}
           >
             STAIR ECOSYSTEM PVT. LTD.
@@ -33,10 +42,19 @@ const Header = () => {
           {/* Centered Text in Mobile */}
           <div className="ml-10 absolute left-1/2 transform -translate-x-1/2 md:hidden">
             <span
-              className="text-2xl font-bold text-blue-700 -mt-1"
+              className="text-2xl font-bold -mt-1"
               style={{
-                textShadow: "1px 1px 0 #ffffff, 2px 2px 0 #3b82f6", // white highlight, blue shadow
-                fontFamily: `'Poppins', sans-serif`, // or 'Rubik', 'Nunito'
+                fontFamily: "'Arial Black', Arial, sans-serif",
+                fontWeight: "bold",
+                // fontSize: "48px",
+                color: "#0074D9", // Blue fill
+                textShadow: `
+                -1px -1px 0 #fff,  
+                 1px -1px 0 #fff,
+                -1px  1px 0 #fff,
+                 1px  1px 0 #fff
+              `, // Black outline effect
+                letterSpacing: "3px",
               }}
             >
               STAIR ECOSYSTEM
