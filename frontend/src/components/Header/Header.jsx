@@ -16,7 +16,7 @@ const Header = () => {
           <img
             src="/Logo.png"
             alt="Stair Ecosystem"
-            className="w-19 h-19 object-contain ml-1 md:w-20 md:h-20" // 👈 Adjusted size & position for mobile
+            className="w-20 h-20 object-contain ml-1 md:w-23 md:h-23" // 👈 Adjusted size & position for mobile
           />
 
           {/* Desktop Text */}
@@ -27,7 +27,7 @@ const Header = () => {
               fontFamily: `'Poppins', sans-serif`, // or 'Rubik', 'Nunito'
             }}
           >
-            Stair Ecosystem Private Limited
+            STAIR ECOSYSTEM PVT. LTD.
           </span>
 
           {/* Centered Text in Mobile */}
@@ -39,7 +39,7 @@ const Header = () => {
                 fontFamily: `'Poppins', sans-serif`, // or 'Rubik', 'Nunito'
               }}
             >
-              Stair Ecosystem
+              STAIR ECOSYSTEM
             </span>
           </div>
         </div>

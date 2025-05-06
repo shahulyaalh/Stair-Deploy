@@ -41,8 +41,9 @@ const ServicePage = () => {
         className="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-14 leading-relaxed"
         data-aos="fade-up"
       >
-        Stair Ecosystem specializes in Solar System and CCTV Camera Sales and
-        Services for Residential and Commercial clients.
+        <span className="font-bold text-blue-700">Stair Ecosystem</span>{" "}
+        specializes in Solar System and CCTV Camera Sales and Services for
+        Residential and Commercial clients.
       </p>
 
       {/* Service Boxes */}
@@ -52,7 +53,7 @@ const ServicePage = () => {
           className="bg-cyan-400 p-8 rounded-3xl shadow-lg text-black"
           data-aos="fade-right"
         >
-          <h3 className="text-2xl font-extrabold mb-4" data-aos="fade-up">
+          <h3 className="text-2xl font-bold mb-4" data-aos="fade-up">
             Solar System Services
           </h3>
           {/* Solar Image */}
@@ -64,7 +65,7 @@ const ServicePage = () => {
           />
 
           <p
-            className="z-5 mt-10 text-lg font-semibold italic leading-relaxed mb-6"
+            className="z-5 mt-10 text-lg  leading-relaxed mb-6"
             data-aos="fade-up"
           >
             Switching to solar energy reduces your electricity bills and
@@ -74,12 +75,10 @@ const ServicePage = () => {
           </p>
 
           {/* NEW PHRASE now comes here */}
-          <p
-            className="text-md font-medium mb-4 leading-relaxed"
-            data-aos="fade-up"
-          >
-            Stair Ecosystem offers solar panel sales, installation, and
-            maintenance for homes and businesses.
+          <p className="text-md  mb-4 leading-relaxed" data-aos="fade-up">
+            <span className="font-bold text-blue-700">Stair Ecosystem</span>{" "}
+            offers solar panel sales, installation, and maintenance for homes
+            and businesses.
           </p>
 
           <h4 className="text-xl font-bold mb-3" data-aos="fade-up">
@@ -97,7 +96,7 @@ const ServicePage = () => {
           className="bg-[#FDB813] p-8 rounded-3xl shadow-lg text-black"
           data-aos="fade-left"
         >
-          <h3 className="text-2xl font-extrabold mb-4" data-aos="fade-up">
+          <h3 className="text-2xl font-bold mb-4" data-aos="fade-up">
             CCTV Camera Services
           </h3>
           {/* CCTV Image */}
@@ -109,7 +108,7 @@ const ServicePage = () => {
           />
 
           <p
-            className="z-1 mt--25 text-lg font-semibold italic leading-relaxed mb-6"
+            className="z-1 mt--25 text-lg leading-relaxed mb-6"
             data-aos="fade-up"
           >
             Installing a CCTV camera system enhances security and peace of mind
@@ -119,12 +118,10 @@ const ServicePage = () => {
           </p>
 
           {/* NEW PHRASE now comes here */}
-          <p
-            className="text-md font-medium mb-4 leading-relaxed"
-            data-aos="fade-up"
-          >
-            Stair Ecosystem provides CCTV camera sales, setup, and support for
-            residential and commercial security.
+          <p className="text-md  mb-4 leading-relaxed" data-aos="fade-up">
+            <span className="font-bold text-blue-700">Stair Ecosystem</span>{" "}
+            provides CCTV camera sales, setup, and support for residential and
+            commercial security.
           </p>
 
           <h4 className="text-xl font-bold mb-3" data-aos="fade-up">
