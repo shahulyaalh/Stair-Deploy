@@ -31,7 +31,7 @@ const Header = () => {
           </span>
 
           {/* Centered Text in Mobile */}
-          <div className="ml-6 absolute left-1/2 transform -translate-x-1/2 md:hidden">
+          <div className="ml-10 absolute left-1/2 transform -translate-x-1/2 md:hidden">
             <span
               className="text-2xl font-bold text-blue-700 -mt-1"
               style={{
