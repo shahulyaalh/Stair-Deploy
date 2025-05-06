@@ -72,7 +72,7 @@ const Header = () => {
           </Link>
 
           <Link
-            to="/service"
+            to="/gallery"
             className="text-gray-700 hover:text-blue-700 font-medium"
           >
             Gallery
