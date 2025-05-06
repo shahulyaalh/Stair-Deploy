@@ -55,9 +55,16 @@ const ServicePage = () => {
           <h3 className="text-2xl font-extrabold mb-4" data-aos="fade-up">
             Solar System Services
           </h3>
+          {/* Solar Image */}
+          <img
+            src="/images/solar-service.png" // Replace with your actual image path
+            alt="Solar System"
+            className="mt-10 z-15 w-full h-48 object-cover rounded-xl mb-5"
+            data-aos="zoom-in"
+          />
 
           <p
-            className="text-lg font-semibold italic leading-relaxed mb-6"
+            className="z-5 mt-10 text-lg font-semibold italic leading-relaxed mb-6"
             data-aos="fade-up"
           >
             Switching to solar energy reduces your electricity bills and
@@ -93,9 +100,16 @@ const ServicePage = () => {
           <h3 className="text-2xl font-extrabold mb-4" data-aos="fade-up">
             CCTV Camera Services
           </h3>
+          {/* CCTV Image */}
+          <img
+            src="/images/cctv-service.png" // Replace with your actual image path
+            alt="CCTV Camera"
+            className="z-2 mt-10 w-full h-48 object-cover rounded-xl mb-5"
+            data-aos="zoom-in"
+          />
 
           <p
-            className="text-lg font-semibold italic leading-relaxed mb-6"
+            className="z-1 mt--25 text-lg font-semibold italic leading-relaxed mb-6"
             data-aos="fade-up"
           >
             Installing a CCTV camera system enhances security and peace of mind

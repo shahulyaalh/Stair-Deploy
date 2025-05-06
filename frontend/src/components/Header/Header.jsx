@@ -19,16 +19,29 @@ const Header = () => {
             className="w-19 h-19 object-contain ml-1 md:w-20 md:h-20" // 👈 Adjusted size & position for mobile
           />
 
-          <span className="hidden md:inline text-4xl font-bold text-blue-700 -mt-1">
+          {/* Desktop Text */}
+          <span
+            className="hidden md:inline-block text-blue-700 text-4xl font-bold relative"
+            style={{
+              textShadow: "1px 1px 0 #ffffff, 2px 2px 0 #3b82f6", // white highlight, blue shadow
+              fontFamily: `'Poppins', sans-serif`, // or 'Rubik', 'Nunito'
+            }}
+          >
             Stair Ecosystem Private Limited
           </span>
-        </div>
 
-        {/* Centered Text in Mobile */}
-        <div className="ml-6 absolute left-1/2 transform -translate-x-1/2 md:hidden">
-          <span className="text-2xl font-bold text-blue-700 -mt-1">
-            Stair Ecosystem
-          </span>
+          {/* Centered Text in Mobile */}
+          <div className="ml-6 absolute left-1/2 transform -translate-x-1/2 md:hidden">
+            <span
+              className="text-2xl font-bold text-blue-700 -mt-1"
+              style={{
+                textShadow: "1px 1px 0 #ffffff, 2px 2px 0 #3b82f6", // white highlight, blue shadow
+                fontFamily: `'Poppins', sans-serif`, // or 'Rubik', 'Nunito'
+              }}
+            >
+              Stair Ecosystem
+            </span>
+          </div>
         </div>
 
         {/* Desktop Navigation */}
