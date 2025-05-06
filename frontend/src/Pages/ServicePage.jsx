@@ -42,7 +42,9 @@ const ServicePage = () => {
         data-aos="fade-up"
       >
         <span className="font-bold text-blue-700">Stair Ecosystem</span>{" "}
-        specializes in Solar System and CCTV Camera Sales and Services for
+        specializes in Solar System and CCTV Camera Sales and Services <br />
+        <span>for</span>
+        <br />
         Residential and Commercial clients.
       </p>
 
