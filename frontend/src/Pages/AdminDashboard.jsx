@@ -94,9 +94,9 @@ export default function AdminDashboard() {
             <button
               onClick={() => {
                 localStorage.removeItem("adminToken");
-                window.location.href = "/admin-login";
+                window.location.href = "/admin/login";
               }}
-              className="text-sm text-gray-700 hover:text-gray-900 cursor-pointer"
+              className="text-sm text-gray-700 hover:text-gray-900"
             >
               Sign out
             </button>
@@ -173,7 +173,7 @@ export default function AdminDashboard() {
                       <button
                         type="button"
                         onClick={handleClear}
-                        className="cursor-pointer mt-2 text-sm text-red-500 hover:underline"
+                        className="mt-2 text-sm text-red-500 hover:underline"
                       >
                         Remove Image
                       </button>
@@ -183,7 +183,7 @@ export default function AdminDashboard() {
                 <div>
                   <button
                     type="submit"
-                    className={`cursor-pointer w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition ${
+                    className={`w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition ${
                       loading ? "opacity-50 cursor-not-allowed" : ""
                     }`}
                     disabled={loading}

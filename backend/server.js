@@ -13,7 +13,25 @@ const Admin = require("./models/admin");
 const Activity = require("./models/Activity");
 
 const app = express();
-app.use(cors());
+const allowedOrigins = [
+  "http://localhost:5173", // dev Vite frontend
+  "https://stair-ecosystem-1.vercel.app", // production frontend (example)
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    methods: ["GET", "POST"],
+    credentials: true, // allow cookies/headers
+  })
+);
+
 // app.use(express.json());
 app.use(express.json({ limit: "50mb" })); // or larger if needed
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
@@ -104,32 +122,6 @@ const storage = multer.diskStorage({
   },
 });
 const upload = multer({ storage });
-
-// // Upload Activity
-// app.post("/api/activities/upload", upload.single("image"), async (req, res) => {
-//   const { title, description } = req.body;
-//   console.log(req.file);
-//   const imageUrl = req.file ? `/uploads/${req.file.filename}` : "";
-
-//   try {
-//     const activity = new Activity({ title, description, imageUrl });
-//     await activity.save();
-//     res.status(201).json(activity);
-//   } catch (err) {
-//     res.status(500).json({ error: "Failed to save activity." });
-//   }
-// });
-
-// // Get Activities
-// app.get("/api/activities", async (req, res) => {
-//   try {
-//     const activities = await Activity.find().sort({ createdAt: -1 });
-//     console.log(activities);
-//     res.json(activities);
-//   } catch (err) {
-//     res.status(500).json({ error: "Failed to fetch activities." });
-//   }
-// });
 app.post("/api/activities/upload", async (req, res) => {
   const { title, description, image } = req.body;
 
