@@ -42,7 +42,7 @@ const Header = () => {
           <div className="flex flex-col items-center justify-center ml-2 md:hidden">
             <div className="ml-7 flex flex-col items-start">
               <span
-                className="text-[20px] font-extrabold uppercase tracking-wide"
+                className="text-[25px] font-extrabold uppercase tracking-wide"
                 style={{
                   fontFamily: "'Calibre', sans-serif",
                   color: "#1446e4",
