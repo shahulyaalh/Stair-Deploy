@@ -12,7 +12,7 @@ const Header = () => {
     <header className="bg-white shadow-md fixed w-full top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative">
         {/* Logo */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center -ml-4 space-x-4">
           <img
             src="/Logo.png"
             alt="Stair Ecosystem"
@@ -21,9 +21,9 @@ const Header = () => {
 
           <div className="hidden md:flex flex-col items-center text-center">
             <span
-              className="text-[26px] font-black uppercase tracking-wide"
+              className="text-[30px] font-black uppercase tracking-wide"
               style={{
-                fontFamily: "'Arial Black', Arial, sans-serif",
+                fontFamily: "'Calibre', sans-serif",
                 color: "#1446e4", // Strong Accent Blue
 
                 WebkitTextStroke: "0px white", // White outline
@@ -40,11 +40,11 @@ const Header = () => {
 
           {/* Centered Text in Mobile */}
           <div className="ml-8 absolute left-1/2 transform -translate-x-1/2 md:hidden">
-            <div className="flex flex-col items-center -mt-1">
+            <div className="flex flex-col items-center -mb-1">
               <span
-                className="text-3xl font-bold uppercase tracking-wider"
+                className="text-3xl font-black uppercase tracking-wider"
                 style={{
-                  fontFamily: "'Arial Black', Arial, sans-serif",
+                  fontFamily: "'Calibre', sans-serif",
                   color: "#1446e4", // Strong Accent Blue
 
                   WebkitTextStroke: "0px white", // White outline
