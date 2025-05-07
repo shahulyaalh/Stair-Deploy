@@ -40,7 +40,7 @@ const Header = () => {
 
           {/* Centered Text in Mobile */}
           <div className="flex flex-col items-center justify-center ml-2 md:hidden">
-            <div className="ml-7 flex flex-col items-start">
+            <div className="ml-6 flex flex-col items-start">
               <span
                 className="text-[23px] font-extrabold uppercase tracking-wide"
                 style={{
