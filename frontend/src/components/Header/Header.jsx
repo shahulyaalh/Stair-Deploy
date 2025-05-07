@@ -41,15 +41,7 @@ const Header = () => {
           {/* Centered Text in Mobile */}
           <div className="flex flex-col items-center justify-center ml-2 md:hidden">
             <div className="flex flex-col items-start">
-              <span
-                className="text-[24px] font-extrabold uppercase tracking-wide"
-                style={{
-                  fontFamily: "'Cambria', sans-serif",
-                  color: "#1446e4",
-                  letterSpacing: "1px",
-                  fontWeight: "50px",
-                }}
-              >
+              <span className="text-lg xs:text-xl sm:text-2xl font-extrabold uppercase tracking-wide text-[#1446e4] font-serif">
                 STAIR ECOSYSTEM
               </span>
 
