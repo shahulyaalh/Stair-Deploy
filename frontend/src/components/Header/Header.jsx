@@ -40,12 +40,12 @@ const Header = () => {
 
           {/* Centered Text in Mobile */}
           <div className="flex flex-col items-center justify-center ml-2 md:hidden">
-            <div className="flex flex-col items-start">
+            <div className="flex flex-col items-center">
               <span className="ml-5 text-lg xs:text-xl sm:text-2xl font-extrabold uppercase tracking-wide text-[#1446e4] font-serif">
                 STAIR ECOSYSTEM
               </span>
 
-              <span className="ml-15 text-gray-700 font-medium text-xs mt-1">
+              <span className="text-gray-700 font-medium text-xs mt-1">
                 CIN: U80200TN2025PTC179412
               </span>
             </div>
