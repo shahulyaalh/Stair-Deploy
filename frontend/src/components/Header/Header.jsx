@@ -19,46 +19,51 @@ const Header = () => {
             className="w-20 h-20 object-contain ml-1 md:w-23 md:h-23" // 👈 Adjusted size & position for mobile
           />
 
-          {/* Desktop Text */}
-          <span
-            className="hidden md:inline-block text-blue-700 text-3xl font-bold relative"
-            style={{
-              fontFamily: "'Arial Black', Arial, sans-serif",
-              fontWeight: "bold",
-              fontSize: "32px",
-              color: "#0074D9", // Blue fill
-              textShadow: `
-              -1px -1px 0 #fff,  
-               1px -1px 0 #fff,
-              -1px  1px 0 #fff,
-               1px  1px 0 #fff
-            `, // Black outline effect
-              letterSpacing: "2px",
-            }}
-          >
-            STAIR ECOSYSTEM PVT. LTD.
-          </span>
+          <div className="hidden md:flex flex-col items-center text-center">
+            <span
+              className="text-blue-700 text-3xl font-bold relative"
+              style={{
+                fontFamily: "'Arial Black', Arial, sans-serif",
+                color: "#0074D9",
+                textShadow: `
+        -1px -1px 0 #fff,  
+         1px -1px 0 #fff,
+        -1px  1px 0 #fff,
+         1px  1px 0 #fff
+      `,
+                letterSpacing: "2px",
+              }}
+            >
+              STAIR ECOSYSTEM PVT. LTD.
+            </span>
+            <span className="text-gray-700 justify-center font-medium text-sm mt-1">
+              CIN: U80200TN2025PTC179412
+            </span>
+          </div>
 
           {/* Centered Text in Mobile */}
           <div className="ml-8 absolute left-1/2 transform -translate-x-1/2 md:hidden">
-            <span
-              className="text-2xl font-bold -mt-1"
-              style={{
-                fontFamily: "'Arial Black', Arial, sans-serif",
-                fontWeight: "bold",
-                // fontSize: "48px",
-                color: "#0074D9", // Blue fill
-                textShadow: `
-                -1px -1px 0 #fff,  
-                 1px -1px 0 #fff,
-                -1px  1px 0 #fff,
-                 1px  1px 0 #fff
-              `, // Black outline effect
-                letterSpacing: "3px",
-              }}
-            >
-              STAIR ECOSYSTEM
-            </span>
+            <div className="flex flex-col items-center -mt-1">
+              <span
+                className="text-2xl font-bold"
+                style={{
+                  fontFamily: "'Arial Black', Arial, sans-serif",
+                  color: "#0074D9",
+                  textShadow: `
+        -1px -1px 0 #fff,  
+         1px -1px 0 #fff,
+        -1px  1px 0 #fff,
+         1px  1px 0 #fff
+      `,
+                  letterSpacing: "3px",
+                }}
+              >
+                STAIR ECOSYSTEM
+              </span>
+              <span className="text-gray-700 font-medium text-sm mt-1">
+                CIN: U80200TN2025PTC179412
+              </span>
+            </div>
           </div>
         </div>
 
