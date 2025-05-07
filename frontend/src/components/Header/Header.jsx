@@ -21,16 +21,11 @@ const Header = () => {
 
           <div className="hidden md:flex flex-col items-center text-center">
             <span
-              className="text-blue-700 text-3xl font-bold relative"
+              className="text-4xl font-black uppercase tracking-wide"
               style={{
+                color: "#0074D9", // Solid blue fill (or any color your client prefers)
+                WebkitTextStroke: "2px rgb(221, 219, 248)", // White outline (thicker for visibility)
                 fontFamily: "'Arial Black', Arial, sans-serif",
-                color: "#0074D9",
-                textShadow: `
-        -1px -1px 0 #fff,  
-         1px -1px 0 #fff,
-        -1px  1px 0 #fff,
-         1px  1px 0 #fff
-      `,
                 letterSpacing: "2px",
               }}
             >
@@ -45,17 +40,12 @@ const Header = () => {
           <div className="ml-8 absolute left-1/2 transform -translate-x-1/2 md:hidden">
             <div className="flex flex-col items-center -mt-1">
               <span
-                className="text-2xl font-bold"
+                className="text-3xl font-bold"
                 style={{
+                  color: "#0074D9", // Solid blue fill (or any color your client prefers)
+                  WebkitTextStroke: "2px rgb(221, 219, 248)", // White outline (thicker for visibility)
                   fontFamily: "'Arial Black', Arial, sans-serif",
-                  color: "#0074D9",
-                  textShadow: `
-        -1px -1px 0 #fff,  
-         1px -1px 0 #fff,
-        -1px  1px 0 #fff,
-         1px  1px 0 #fff
-      `,
-                  letterSpacing: "3px",
+                  letterSpacing: "2px",
                 }}
               >
                 STAIR ECOSYSTEM
