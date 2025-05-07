@@ -21,16 +21,18 @@ const Header = () => {
 
           <div className="hidden md:flex flex-col items-center text-center">
             <span
-              className="text-4xl font-black uppercase tracking-wide"
+              className="text-3xl font-black uppercase tracking-wide"
               style={{
-                color: "#0074D9", // Solid blue fill (or any color your client prefers)
-                WebkitTextStroke: "2px rgb(221, 219, 248)", // White outline (thicker for visibility)
                 fontFamily: "'Arial Black', Arial, sans-serif",
+                color: "#1E90FF", // Strong Accent Blue
+
+                WebkitTextStroke: "0px white", // White outline
                 letterSpacing: "2px",
               }}
             >
               STAIR ECOSYSTEM PVT. LTD.
             </span>
+
             <span className="text-gray-700 justify-center font-medium text-sm mt-1">
               CIN: U80200TN2025PTC179412
             </span>
@@ -42,12 +44,11 @@ const Header = () => {
               <span
                 className="text-4xl font-bold uppercase tracking-wider"
                 style={{
-                  color: "#0074D9", // Blue fill
-                  WebkitTextStroke: "1px rgb(221, 219, 248)", // Light purple outline
-                  fontFamily: "'Arial Black', Arial, sans-serif", // Calibre font with fallbacks
-                  letterSpacing: "1.5px",
-                  padding: "1px", // Prevents edge clipping
-                  textShadow: "none", // Ensures no glow effects
+                  fontFamily: "'Arial Black', Arial, sans-serif",
+                  color: "#1E90FF", // Strong Accent Blue
+
+                  WebkitTextStroke: "0px white", // White outline
+                  letterSpacing: "2px",
                 }}
               >
                 STAIR ECOSYSTEM
