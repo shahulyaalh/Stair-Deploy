@@ -12,7 +12,7 @@ const Header = () => {
     <header className="bg-white shadow-md fixed w-full top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative">
         {/* Logo */}
-        <div className="flex items-center -ml-4 space-x-4">
+        <div className="flex items-center z-2 -ml-4 space-x-4">
           <img
             src="/Logo.png"
             alt="Stair Ecosystem"
@@ -39,22 +39,20 @@ const Header = () => {
           </div>
 
           {/* Centered Text in Mobile */}
-          <div className="ml-8 absolute left-1/2 transform -translate-x-1/2 md:hidden">
-            <div className="flex flex-col items-center -mb-1">
+          <div className="flex flex-col items-center justify-center ml-2 md:hidden">
+            <div className="ml-7 flex flex-col items-start">
               <span
-                className="text-3xl font-black uppercase tracking-wider"
+                className="text-[20px] font-extrabold uppercase tracking-wide"
                 style={{
                   fontFamily: "'Calibre', sans-serif",
-                  color: "#1446e4", // Strong Accent Blue
-
-                  WebkitTextStroke: "0px white", // White outline
-                  letterSpacing: "1.5px",
+                  color: "#1446e4",
+                  letterSpacing: "1px",
                 }}
               >
                 STAIR ECOSYSTEM
               </span>
 
-              <span className="text-gray-700 font-medium text-sm mt-1">
+              <span className="text-gray-700 font-medium text-xs mt-1">
                 CIN: U80200TN2025PTC179412
               </span>
             </div>
