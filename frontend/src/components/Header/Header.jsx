@@ -23,7 +23,7 @@ const Header = () => {
             <span
               className="text-[30px] font-black uppercase tracking-wide"
               style={{
-                fontFamily: "'Calibre', sans-serif",
+                fontFamily: "'Cambria', sans-serif",
                 color: "#1446e4", // Strong Accent Blue
 
                 WebkitTextStroke: "0px white", // White outline
@@ -42,11 +42,12 @@ const Header = () => {
           <div className="flex flex-col items-center justify-center ml-2 md:hidden">
             <div className="ml-6 flex flex-col items-start">
               <span
-                className="text-[23px] font-extrabold uppercase tracking-wide"
+                className="text-[24px] font-extrabold uppercase tracking-wide"
                 style={{
-                  fontFamily: "'Calibre', sans-serif",
+                  fontFamily: "'Cambria', sans-serif",
                   color: "#1446e4",
                   letterSpacing: "1px",
+                  fontWeight: "50px",
                 }}
               >
                 STAIR ECOSYSTEM
