@@ -45,7 +45,7 @@ const Header = () => {
                 STAIR ECOSYSTEM
               </span>
 
-              <span className="ml-8 text-gray-700 font-medium text-xs mt-1">
+              <span className="ml-15 text-gray-700 font-medium text-xs mt-1">
                 CIN: U80200TN2025PTC179412
               </span>
             </div>
